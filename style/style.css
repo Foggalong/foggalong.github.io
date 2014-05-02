@@ -132,18 +132,6 @@ div.inner-main {
 	opacity: 1;
 }
 
-br.small {
-   display: block;
-   margin: 5px 0;
-   line-height: 5px;
-}
-
-br.tiny {
-   display: block;
-   margin: 1px 0;
-   line-height: 1px;
-}
-
 #id-picture {
 	float:left;
 	width: 250px;
