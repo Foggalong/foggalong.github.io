@@ -9,9 +9,11 @@
 	<meta charset="UTF-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script type="text/javascript" language="javascript" src="console/konami.js"></script>
 </head>
 
 <body>
+
 
 <!--[if !(lt IE 8)]><!-->
    <script type="text/javascript">
@@ -62,6 +64,18 @@
 		<br class="small">
 	</div>
 </div>
+
+<script type="text/javascript">
+	if ( window.addEventListener ) {  
+		var state = 0, konami = [38,38,40,40,37,39,37,39,66,65];  
+  		window.addEventListener("keydown", function(e) {  
+			if ( e.keyCode == konami[state] ) state++;  
+    			else state = 0;  
+    			if ( state == 10 )  
+      				window.location = "console/console.html";
+    			}, true);  
+	}  
+</script>
 
 </body>
 
