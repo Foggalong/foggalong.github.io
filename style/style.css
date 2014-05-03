@@ -109,6 +109,10 @@ em {
 	font-family: trebuchet, arial, sans-sherif;
 }
 
+li.front {
+    padding: 5px;
+}
+
 li.nav {
 	float:left;
 	}
@@ -122,6 +126,7 @@ div.outer-main {
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #FFFFFF;
+    padding: 10px;
 	/*border-radius: 12px; - unsure of how this looks */
 }
 
