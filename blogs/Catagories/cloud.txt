@@ -1,4 +1,6 @@
 android
 book review
 privacy
-technology
+technologyblog
+essay
+education
