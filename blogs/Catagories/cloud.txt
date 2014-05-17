@@ -6,3 +6,6 @@ blog
 essay
 education
 blog
+blog
+vault
+music
