@@ -1,4 +1,4 @@
 Websites
 ===================
 
-Collection of websites I've made. They're hosted here rather than on my own server for archiving purposes.
+Collection of websites I've made. It contains both past websites stored here for archiving purposes, and future website which are being hosted here as a testing ground.
