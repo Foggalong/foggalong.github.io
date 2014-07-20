@@ -1,0 +1,84 @@
+body {
+	background: #2d2d2d;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-position: 50%;
+	margin: 50px 30px 10px 30px;
+}
+
+h1 {
+	color: #2d2d2d;
+	font-family: trebuchet, arial, sans-sherif;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-transform:uppercase;
+	text-decoration: underline;
+}
+
+h2.main-title {
+	color: #2d2d2d;
+	font-size: 50px;
+	font-family: trebuchet, arial, sans-sherif;
+	font-variant: normal;
+	font-weight: bold;
+	text-align: center;
+}
+
+h2 {
+	color: #2d2d2d;
+	font-family: trebuchet, arial, sans-sherif;
+	font-variant: normal;
+	font-weight: bold;
+}
+
+p {
+	font-family: trebuchet, arial, sans-sherif;
+}
+
+a {
+	font-family: trebuchet, arial, sans-sherif;
+}
+
+td {
+	font-family: trebuchet, arial, sans-sherif;
+}
+
+a:link {
+	color: #6699CC;
+}
+
+a:visited {
+	color: #660099;
+}
+
+a.nav:link,a.nav:visited {
+	display:block;
+	width:120px;
+	font-weight:bold;
+	font-variant: small-caps;
+	color:#FFFFFF;
+	background-color:#0066FF;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+}
+
+em {
+	font-family: trebuchet, arial, sans-sherif;
+}
+
+div.outer-main {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #F9F9F9;
+    padding: 10px;
+	/*border-radius: 12px; - unsure of how this looks */
+}
+
+div.inner-main {
+	width: 780px;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 1;
+}
