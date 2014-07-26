@@ -16,11 +16,11 @@
 <div style="width: 768px; margin-left: auto; margin-right: auto;">
 	<ul class="nav">
 		<li class="nav"><a class="nav" href="http://fogg.me.uk/">Home</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog.html">Blog</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/work.html">Work</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/404.html">???</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact.html">Contact</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/about.html">About</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog">Blog</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/work">Work</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/404">???</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact">Contact</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/about">About</a></li>
 	</ul>
 </div>
 <br>
@@ -31,7 +31,7 @@
 		<p> A history of my music content.
 		<ul>
 			<!-- List Begins Here -->
-			<li><a href="../2014-06-17_30DaySongChallenge.html">2014-06-17 - 30 Day Song Challenge</a></li>
+			<li><a href="../2014-06-17_30DaySongChallenge">2014-06-17 - 30 Day Song Challenge</a></li>
 		</ul>
 	</div>
 </div>

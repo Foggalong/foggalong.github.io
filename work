@@ -18,11 +18,11 @@
 <div style="width: 768px; margin-left: auto; margin-right: auto;">
 	<ul class="nav">
 		<li class="nav"><a class="nav" href="http://fogg.me.uk/">Home</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog.html">Blog</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/work.html">Work</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/404.html">???</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact.html">Contact</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/about.html">About</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog">Blog</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/work">Work</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/404">???</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact">Contact</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/about">About</a></li>
 	</ul>
 </div>
 
@@ -62,7 +62,7 @@
 		<h3>Essays</h3>
 		<p>From time to time I just like to write essays on things. Sometimes it's for a debating oppertunity, sometimes a publication, and sometime it's just for the fun of it and to get my own thoughts into place. More often than not these can be found on my blog but LaTeX version are kept again in a <a href="broken">GitHub repo.</a> and with a list of the most recent ones below.</p>
 		<ul>
-			<li class="front"><em>How can our education better prepare us to compete in an increasingly globalised world?</em> Written as part of my unsuccessful application to the 2014 UK-China Student Forum. It can be read <a href="blogs/2014-06-09_EducatingforGlobalisation.html">online</a> or as a <a href="https://github.com/Foggalong/latex-files/blob/master/essays/global.tex">LaTeX'd PDF.</a></li>
+			<li class="front"><em>How can our education better prepare us to compete in an increasingly globalised world?</em> Written as part of my unsuccessful application to the 2014 UK-China Student Forum. It can be read <a href="blogs/2014-06-09_EducatingforGlobalisation">online</a> or as a <a href="https://github.com/Foggalong/latex-files/blob/master/essays/global.tex">LaTeX'd PDF.</a></li>
 		</ul>
 
 		<br>

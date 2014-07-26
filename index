@@ -25,11 +25,11 @@
 <div style="width: 768px; margin-left: auto; margin-right: auto;">
 	<ul class="nav">
 		<li class="nav"><a class="nav" href="http://fogg.me.uk/">Home</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog.html">Blog</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/work.html">Work</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/404.html">???</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact.html">Contact</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/about.html">About</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog">Blog</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/work">Work</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/404">???</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact">Contact</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/about">About</a></li>
 	</ul>
 </div>
 
@@ -39,7 +39,7 @@
 	<div class="inner-main">
 		<h2 class="main-title">Foggalong &beta;</h2>
 		<h2>Simple Beginings</h2>
-		<p>Welcome - this is the personal website of <a href="about.html">Joshua Fogg</a>. Here you can find my blogs &amp; writing, my work and my contact details.</p>
+		<p>Welcome - this is the personal website of <a href="about">Joshua Fogg</a>. Here you can find my blogs &amp; writing, my work and my contact details.</p>
 
 		<p>This website still is in beta but should function now as normal. All the beta status means is that I'm still working out all the little bugs and exactly what should go where (note the unused comic tab). The content is also still quite slim but that will hopefully change pretty quickly.</p>
 
@@ -55,7 +55,7 @@
 			if ( e.keyCode == konami[state] ) state++;  
     			else state = 0;  
     			if ( state == 10 )  
-      				window.location = "console/console.html";
+      				window.location = "console/console";
     			}, true);  
 	}  
 </script>

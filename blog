@@ -18,11 +18,11 @@
 <div style="width: 768px; margin-left: auto; margin-right: auto;">
 	<ul class="nav">
 		<li class="nav"><a class="nav" href="http://fogg.me.uk/">Home</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog.html">Blog</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/work.html">Work</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/404.html">???</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact.html">Contact</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/about.html">About</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog">Blog</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/work">Work</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/404">???</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact">Contact</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/about">About</a></li>
 	</ul>
 </div>
 
@@ -31,42 +31,42 @@
 <div class="outer-main">
 	<div class="inner-main">
 		<h2 title="Currently all Lorem ipsum">Blog</h2>
-		<p> Links to my most recent blogs. If you want to have a look at my older stuff either <a href="blogs/Catagories/cloud.html">sort by catagory</a> or see a <a href="blogs/Catagories/all_list.html">full list!</a> Enjoy!</p>
+		<p> Links to my most recent blogs. If you want to have a look at my older stuff either <a href="blogs/Catagories/cloud">sort by catagory</a> or see a <a href="blogs/Catagories/all_list">full list!</a> Enjoy!</p>
 
 		<br>
 
 		<!-- Recent Blogs Begin Here -->
 		<article>
-			<h3> <a href="blogs/2014-06-17_30DaySongChallenge.html">30 Day Song Challenge</a> - 2014-06-17</h3>
-			<p>I look back at my 2011 30 Day Song Challenge submission. <a href="blogs/2014-06-17_30DaySongChallenge.html">Read more...</a></p>
+			<h3> <a href="blogs/2014-06-17_30DaySongChallenge">30 Day Song Challenge</a> - 2014-06-17</h3>
+			<p>I look back at my 2011 30 Day Song Challenge submission. <a href="blogs/2014-06-17_30DaySongChallenge">Read more...</a></p>
 		</article>
 
 		<br class="small">
 
 		<article>
-			<h3> <a href="blogs/2014-06-14_SixThirty.html">What's the time?</a> - 2014-06-14</h3>
-			<p>I explain the times stated at the start of every blog. <a href="blogs/2014-06-14_SixThirty.html">Read more...</a></p>
+			<h3> <a href="blogs/2014-06-14_SixThirty">What's the time?</a> - 2014-06-14</h3>
+			<p>I explain the times stated at the start of every blog. <a href="blogs/2014-06-14_SixThirty">Read more...</a></p>
 		</article>
 
 		<br class="small">
 
 		<article>
-			<h3> <a href="blogs/2014-06-09_EducatingforGlobalisation.html">Educating for Globalisation</a> - 2014-06-09</h3>
-			<p>How can our education better prepare us to compete in an increasingly globalised world? <a href="blogs/2014-06-09_EducatingforGlobalisation.html">Read more...</a></p>
+			<h3> <a href="blogs/2014-06-09_EducatingforGlobalisation">Educating for Globalisation</a> - 2014-06-09</h3>
+			<p>How can our education better prepare us to compete in an increasingly globalised world? <a href="blogs/2014-06-09_EducatingforGlobalisation">Read more...</a></p>
 		</article>
 
 		<br class="small">
 
 		<article>
-			<h3> <a href="blogs/2014-03-08_TheHitchhiker'sGuidetotheGalaxy.html">The Hitchhiker's Guide to the Galaxy </a> - 2014-03-08</h3>
-			<p>My review of the first book in the famous sci-fi series by Douglas Adams. <a href="blogs/2014-03-08_TheHitchhiker'sGuidetotheGalaxy.html">Read more...</a></p>
+			<h3> <a href="blogs/2014-03-08_TheHitchhiker'sGuidetotheGalaxy">The Hitchhiker's Guide to the Galaxy </a> - 2014-03-08</h3>
+			<p>My review of the first book in the famous sci-fi series by Douglas Adams. <a href="blogs/2014-03-08_TheHitchhiker'sGuidetotheGalaxy">Read more...</a></p>
 		</article>
 
 		<br class="small">
 
 		<article>
-			<h3> <a href="blogs/2014-01-27_Privacy&amp;Tinfoil.html">Privacy &amp; Tinfoil</a> - 2014-01-27</h3>
-			<p>With Facebook mobile's recent change in privacy policy I review what I see as the best alternative app. <a href="blogs/2014-01-27_Privacy&amp;Tinfoil.html">Read more...</a></p>
+			<h3> <a href="blogs/2014-01-27_Privacy&amp;Tinfoil">Privacy &amp; Tinfoil</a> - 2014-01-27</h3>
+			<p>With Facebook mobile's recent change in privacy policy I review what I see as the best alternative app. <a href="blogs/2014-01-27_Privacy&amp;Tinfoil">Read more...</a></p>
 		</article>
 		<!-- Recent Blogs End Here -->
 	</div>

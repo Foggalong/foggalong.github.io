@@ -18,11 +18,11 @@
 <div style="width: 768px; margin-left: auto; margin-right: auto;">
 	<ul class="nav">
 		<li class="nav"><a class="nav" href="http://fogg.me.uk/">Home</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog.html">Blog</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/work.html">Work</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/404.html">???</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact.html">Contact</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/about.html">About</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog">Blog</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/work">Work</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/404">???</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/contact">Contact</a></li>
+		<li class="nav"><a class="nav" href="http://fogg.me.uk/about">About</a></li>
 	</ul>
 </div>
 
@@ -40,7 +40,7 @@
 	<div class="inner-main">
 		<h3 class="date" align="right">2014 - 06 - 09</h3>
 		<h2>How can our education better prepare us to compete in an increasingly globalised world?</h2>
-		<h3 class="date" align="left">~2 minutes 30 seconds <a href="2014-06-14_SixThirty.html">reading</a></h3>
+		<h3 class="date" align="left">~2 minutes 30 seconds <a href="2014-06-14_SixThirty">reading</a></h3>
 		<article>
 			<p>Discussions about accounting for globalization in education are nothing new, but the world in which they are being discussed has advanced significantly. The generation being educated in our schools are far more technically able than the people teaching them and thus the education they are receiving isn't a technical one. Sure it may implement elements of technology like smart-boards, online resources and in some extreme cases individual tablet or laptop computers but in most situations this is completely disproportionate to how far we've come. Most students today have no idea of the inner workings of the devices and services they'll use for the rest of their lives.</p>
 
