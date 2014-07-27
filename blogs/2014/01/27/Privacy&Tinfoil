@@ -38,7 +38,7 @@
 	<div class="inner-main">
 		<h3 class="date" align="right">2014 - 01 - 27</h3>
 		<h2>Facebook mobile - Privacy &amp; Tinfoil</h2>
-		<h3 class="date" align="left">~2 minutes 50 seconds <a href="2014-06-14_SixThirty">reading</a></h3>
+		<h3 class="date" align="left">~2 minutes 50 seconds <a href="http://fogg.me.uk/blog/reading">reading</a></h3>
 		<article>
 			<p>Chances are if you're reading this you have a Facebook account. In fact, as of December last year over 1.23 billion people were using the social network on a regular basis which equates to nearly 1 in 5 people globally.</p>
 
@@ -47,7 +47,7 @@
 			<h3> The Catch </h3>
 
 			<div>
-				<img src="../images/blogs/facebook.png" alt="Tinfoil Screenshot" style="float:left; padding-bottom: 15px; padding-right: 15px" width="240px" height="400px">
+				<img src="http://fogg.me.uk/images/blogs/facebook.png" alt="Tinfoil Screenshot" style="float:left; padding-bottom: 15px; padding-right: 15px" width="240px" height="400px">
 			</div>
 
 			<p>On the 27th of January android phones began to receive an update for Facebook. In this update the mobile app for the popular social networking site acquired the permission to access and read users text messages. I say acquire because while the system actually gives the user a choice it doesn't ordinarily go down like that.</p>
@@ -61,7 +61,7 @@
 			<h3> But how will I access my social life‽ </h3>
 
 			<div>
-				<img src="../images/blogs/tinfoil.png" alt="Tinfoil Screenshot" style="float:right; padding-bottom: 15px; padding-left: 15px" width="160px" height="267px">
+				<img src="http://fogg.me.uk/images/blogs/tinfoil.png" alt="Tinfoil Screenshot" style="float:right; padding-bottom: 15px; padding-left: 15px" width="160px" height="267px">
 			</div>
 
 			<p>As daft as it might seem like most users I still wanted access to Facebook on the go. I tried using the mobile site for a bit but it was a little two clunky in the browser for my liking. Baring the privacy element of situation in mind I started looking through the FOSS app store <a href="https://f-droid.org/">F-Droid</a> for an alternative.</p>
