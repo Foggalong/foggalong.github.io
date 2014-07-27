@@ -28,11 +28,11 @@
 
 <div class="outer-main">
 	<div class="inner-main">
-		<h2 title="Currently all Lorem ipsum">Blog Catagory: <em>android</em></h2>
-		<p> A history of my android content.
+		<h2 title="Currently all Lorem ipsum">Blog Catagory: <em>privacy</em></h2>
+		<p> A history of my privacy content.
 		<ul>
 			<!-- List Begins Here -->
-			<li><a href="../2014-01-27_Privacy&Tinfoil">2014-01-27 - Privacy & Tinfoil</a></li>
+			<li><a href="../2014/01/27/Privacy&Tinfoil">2014-01-27 - Privacy & Tinfoil</a></li>
 		</ul>
 	</div>
 </div>

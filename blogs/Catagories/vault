@@ -28,13 +28,11 @@
 
 <div class="outer-main">
 	<div class="inner-main">
-		<h2 title="Currently all Lorem ipsum">Blog Catagory: <em>blog</em></h2>
-		<p> A history of my blog content.
+		<h2 title="Currently all Lorem ipsum">Blog Catagory: <em>vault</em></h2>
+		<p> A history of my vault content.
 		<ul>
 			<!-- List Begins Here -->
-			<li><a href="../2014-06-17_30DaySongChallenge">2014-06-17 - 30 Day Song Challenge</a></li>
-			<li><a href="../2014-06-14_SixThirty">2014-06-14 - What's the time?</a></li>
-			<li><a href="../2014-06-09_EducatingforGlobalisation">2014-06-09 - Educating for Globalisation</a></li>
+			<li><a href="../2014/06/17/30DaySongChallenge">2014-06-17 - 30 Day Song Challenge</a></li>
 		</ul>
 	</div>
 </div>

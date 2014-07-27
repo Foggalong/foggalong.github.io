@@ -23,16 +23,15 @@
 		<li class="nav"><a class="nav" href="http://fogg.me.uk/about">About</a></li>
 	</ul>
 </div>
-
 <br>
 
 <div class="outer-main">
 	<div class="inner-main">
-		<h2 title="Currently all Lorem ipsum">Blog Catagory: <em>vault</em></h2>
-		<p> A history of my vault content.
+		<h2 title="Currently all Lorem ipsum">Blog Catagory: <em>music</em></h2>
+		<p> A history of my music content.
 		<ul>
 			<!-- List Begins Here -->
-			<li><a href="../2014-06-17_30DaySongChallenge">2014-06-17 - 30 Day Song Challenge</a></li>
+			<li><a href="../2014/06/17/30DaySongChallenge">2014-06-17 - 30 Day Song Challenge</a></li>
 		</ul>
 	</div>
 </div>
