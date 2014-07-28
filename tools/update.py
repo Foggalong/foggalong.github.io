@@ -65,7 +65,7 @@ else:
 if (":> " in information[3] and len(information[3].split(":> ")) == 2):
 	try:	
 		blog_catagories = information[3].split(":> ")[1].split(" -->")[0].split(", ")
-		list_files = os.listdir("/home/josh/Programs/HTML/Foggalong.github.io/blogs/Catagories/")
+		list_files = os.listdir("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/")
 		non_catagories, known_catagories, new_catagories = ["all", "template"], [], [] 
 		for entry in list_files:
 			if entry.split("_")[0] in non_catagories:
@@ -110,10 +110,10 @@ print("Blog data accepted")
 
 # Moving blog to /blogs
 try:
-	with open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/"+blog_date+" "+blog_title+""):
+	with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/"+blog_date+" "+blog_title+""):
 		error("blog '%s' already exists" % (blog_date+" "+blog_title))
 except IOError:
-	output = open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/"+blog_date+'_'+blog_title.replace(' ','')+"", 'w')
+	output = open("/home/josh/Programs/HTML/fogg.me.uk/blogs/"+blog_date+'_'+blog_title.replace(' ','')+"", 'w')
 	output.write(open(file_name).read())
 	output.close()
 	print("Blog moved to blogs folder")
@@ -121,56 +121,29 @@ except IOError:
 # Managing new 
 for entry in new_catagories:
 	# Creating New Lists
-	entry_list = open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/Catagories/"+entry+"_list", 'w')
-	entry_list.write(open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/Catagories/template_list").read())
+	entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'w')
+	entry_list.write(open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/template").read())
 	entry_list.close()
-	with open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/Catagories/"+entry+"_list", 'r+') as file:
+	with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'r+') as file:
 		new_list = [line for line in file]
 	for line in new_list:
 		if "[template]" in line:
 			old_line, n = line, new_list.index(line)
 			new_list.pop(n)
 			new_list.insert(n, old_line.replace("[template]", entry))
-	entry_list = open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/Catagories/"+entry+"_list", 'w')
+	entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'w')
 	entry_list.truncate()
 	for line in new_list:
 		entry_list.write(line)
 	entry_list.close()
 	print("Created %s catagory" % entry)
-	# Adding to main blog list - untested
-	# I don't think this is needed any more with the move to word clouds
-	# with open("/home/josh/Programs/HTML/Foggalong.github.io/blog", 'r+') as file:
-	# 	blog_file_list = [line for line in file]
-	# catagory_list = [entry]
-	# for line in blog_file_list:
-	# 	if 'id="catagory link"' in line:
-	# 		catagory_list.append(line.split(">")[2].split("<")[0])
-	# for item in catagory_list:
-	# 	n, old_item = catagory_list.index(item), item
-	# 	catagory_list.pop(n)
-	# 	catagory_list.append(item.title())
-	# entry_list = open("/home/josh/Programs/HTML/Foggalong.github.io/blog", 'w')
-	# entry_list.truncate()
-	# catagory_list.sort()
-	# for line in blog_file_list:
-	# 	if "<!-- Catagory List Begins Here -->" in line:
-	# 		entry_list.write(line)
-	# 		for cato in catagory_list:
-	# 			entry_list.write('			<li id="catagory link"><a href="blogs/Catagories/'+cato.lower()+'_list">'+cato+'</a></li>\n')
-	# 	elif 'id="catagory link"' in line:
-	# 		pass
-	# 	else:
-	# 		entry_list.write(line)
-	# entry_list.close()	
-	# print("Added %s catagory to main blog page" % entry)
-
 
 # Adding to word cloud - untested
 for entry in blog_catagories:
-    with open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/Catagories/cloud.txt", 'r') as file:
+    with open("//home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/cloud.txt", 'r') as file:
         cat_list = [line for line in file]
     cat_list.append(entry+"\n")
-    cloud_file = open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/Catagories/cloud.txt", 'w')
+    cloud_file = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/cloud.txt", 'w')
     for line in cat_list:
         cloud_file.write(line)
     cloud_file.close()
@@ -178,13 +151,13 @@ for entry in blog_catagories:
 
 # Adding Blog to Catagory Lists
 for entry in (blog_catagories+["all"]):
-	with open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/Catagories/"+entry+"_list", 'r+') as file:
+	with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry+"_list", 'r+') as file:
 		file_list = [line for line in file]
 	for line in file_list:
 		if "<!-- List Begins Here -->" in line:
 			n = file_list.index(line)
 			file_list.insert(n+1, '			<li><a href="../'+blog_date+'_'+blog_title.replace(' ','')+'">'+blog_date+'     '+blog_title+'</a></li>\n')
-	entry_list = open("/home/josh/Programs/HTML/Foggalong.github.io/blogs/Catagories/"+entry+"_list", 'w')
+	entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry+"_list", 'w')
 	entry_list.truncate()
 	for line in file_list:
 		entry_list.write(line)
@@ -199,12 +172,12 @@ for line in file_list:
 		n = file_list.index(line)
 		file_list.insert(n+1, '		<article>\n')
 		file_list.insert(n+2, '			<h3> <a href="blogs/'+blog_date+'_'+blog_title.replace(' ','')+'">'+blog_title+'</a> - '+blog_date+'</h3>\n')
-		file_list.insert(n+3, '			<p>'+blog_summary+' <a href="blogs/'+blog_date+'_'+blog_title.replace(' ','')+'">Read more...</a></p>\n')
+		file_list.insert(n+3, '			<p>'+blog_summary+'</p>\n')
 		file_list.insert(n+4, '		</article>\n')
 		file_list.insert(n+5, '\n')
 		file_list.insert(n+6, '		<br class="small">\n')
 		file_list.insert(n+7, '\n')
-entry_list = open("/home/josh/Programs/HTML/Foggalong.github.io/blog", 'w')
+entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blog", 'w')
 entry_list.truncate()
 for line in file_list:
 	entry_list.write(line)
@@ -212,14 +185,14 @@ entry_list.close()
 print("Added blog to recent blogs page")
 
 # Removing the least recent blog from Recent Blogs page
-with open("/home/josh/Programs/HTML/Foggalong.github.io/blog", 'r+') as file:
+with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blog", 'r+') as file:
 	file_list = [line for line in file]
 for line in file_list:
 	if "<!-- Recent Blogs End Here -->" in line:
 		n = file_list.index(line)
 		for x in range(1, 8):
 			file_list.pop(n-x)
-entry_list = open("/home/josh/Programs/HTML/Foggalong.github.io/blog", 'w')
+entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blog", 'w')
 entry_list.truncate()
 for line in file_list:
 	entry_list.write(line)
