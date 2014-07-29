@@ -45,8 +45,7 @@
 
 		<p>For a more serious overview, see my <a href="resume.pdf">resume.</a></p>
 
-		<p>You can contact me in the following places:</p>
-		<table>
+		<table style="margin-left: auto; margin-right: auto;">
 			<tr>
 				<td>
 					<a title="Why not send me an email?" href="mailto:joshua.h.fogg@gmail.com">
