@@ -44,6 +44,36 @@
 		<p>All these colourful (and not so colourful) aspects of myself need an outlet and I thought this was the perfect chance to give them one. The stories, the papers, the reviews and the blogs will all find them selves here - my own little slice of the internet pie. So welcome, old friends and new, to me. I hope you enjoy your stay.</p>
 
 		<p>For a more serious overview, see my <a href="resume.pdf">resume.</a></p>
+
+		<p>You can contact me in the following places:</p>
+		<table>
+			<tr>
+				<td>
+					<a title="Why not send me an email?" href="mailto:joshua.h.fogg@gmail.com">
+						<img src="images/icons/gmail.svg" alt="Email">
+					</a> 
+				</td>
+				<td>
+					<a title="Mostly keep this one private" href="https://www.facebook.com/joshua.fogg">
+						<img src="images/icons/facebook.svg" alt="Facebook">
+					</a> 
+				</td>
+				<td>
+					<a title="A good way to see what I'm up to or just say hi" href="https://twitter.com/Foggalong">
+						<img src="images/icons/twitter.svg" alt="Twitter">
+					</a> 
+				<td>
+					<a title="The place where I largely talk about programming stuff" href="https://plus.google.com/+JoshuaFogg/posts">
+						<img src="images/icons/googleplus.svg" alt="Google+">
+					</a> 
+				</td>
+				<td>
+					<a title="If you don't know what this is, don't do it" href="https://pay.reddit.com/u/Foggalong">
+						<img src="images/icons/reddit.svg" alt="Reddit">
+					</a> 
+				</td>
+			</tr>
+		</table>
 	</div>
 </div>
 
