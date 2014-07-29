@@ -9,8 +9,8 @@
 	<meta charset="UTF-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="http://fogg.me.uk/style/style.css">
-	<link rel="icon" href="images/icons/friends.ico">
-	<link rel="shortcut icon" href="images/icons/friends.ico">
+	<link rel="icon" href="http://fogg.me.uk/images/icons/friends.ico">
+	<link rel="shortcut icon" href="http://fogg.me.uk/images/icons/friends.ico">
 </head>
 
 <body>
@@ -24,8 +24,7 @@
 	</ul>
 </div>
 
-
-<br>
+<br><br>
 
 <div class="outer-main">
 	<div class="inner-main">
@@ -41,7 +40,7 @@
 
 		<p>All these colourful (and not so colourful) aspects of myself need an outlet and I thought this was the perfect chance to give them one. The stories, the papers, the reviews and the blogs will all find them selves here - my own little slice of the internet pie. So welcome, old friends and new, to me. I hope you enjoy your stay.</p>
 
-		<p>For a more serious overview, see my <a href="resume.pdf">resume. Contact links are shown below.</a></p>
+		<p>For a more serious overview, see my <a href="resume.pdf">resume</a>. Contact links are shown below.</a></p>
 
 		<br>
 
