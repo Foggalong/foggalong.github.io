@@ -143,13 +143,13 @@ for entry in blog_catagories:
 
 # Adding Blog to Catagory Lists
 for entry in (blog_catagories+["all"]):
-	with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'r+') as file:
+	with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry+"_list", 'r+') as file:
 		file_list = [line for line in file]
 	for line in file_list:
 		if "<!-- List Begins Here -->" in line:
 			n = file_list.index(line)
 			file_list.insert(n+1, '			<li><a href="../'+blog_date+'_'+blog_title.replace(' ','')+'">'+blog_date+'     '+blog_title+'</a></li>\n')
-	entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'w')
+	entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry+"_list", 'w')
 	entry_list.truncate()
 	for line in file_list:
 		entry_list.write(line)
@@ -158,7 +158,7 @@ for entry in (blog_catagories+["all"]):
 
 
 # Adding blog to Recent Blogs page
-with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blog", 'r+') as file:
+with open("/home/josh/Programs/HTML/Foggalong.github.io/blog", 'r+') as file:
 	file_list = [line for line in file]
 for line in file_list:
 	if "<!-- Recent Blogs Begin Here -->" in line:
