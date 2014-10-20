@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>404 | fogg.me.uk</title>
+	<title>Blog | fogg.me.uk</title>
 	<meta name="description" content="Simple Personal Website"> 
 	<meta name="keywords" content="Blog, Programming"> 
 	<meta name="author" content="Joshua Fogg"> 
@@ -32,15 +32,19 @@
 
 <div class="outer-main">
 	<div class="inner-main">
-		<h2 class="main-title">404: Page Not Found</h2>
-		<h2>Aw, darn!</h2>
-		<p>It seems you're a little lost. Either the page you're looking for doesn't exist, or has gone missing somewhere along the line. If you think this has happened in error please <a href="https://github.com/Foggalong/fogg.me.uk/issues">report the problem</a> on the websites GitHub page.</p>
+		<h2 title="Currently all Lorem ipsum">Blog Catagory: <em>book review</em></h2>
+		<p> A history of my book review content.
+		<ul>
+			<!-- List Begins Here -->
+			<li><a href="../2014/03/08/TheHitchhikersGuidetotheGalaxy">2014-03-08 - The Hitchhiker's Guide to the Galaxy </a></li>
+		</ul>
 	</div>
 </div>
 
 </body>
 
 <footer style="width: 80px; margin-left: auto; margin-right: auto;">
+	<br>
 </footer>
 
 </html>
