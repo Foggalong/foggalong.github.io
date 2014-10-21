@@ -53,9 +53,8 @@ a.nav:hover, a.nav:active {
     color: #f9f9f9;
 }
 
-
-
 /* Page Canvas */
+/* ----------- */
 
 div.outer-main {
     width: 80%;
@@ -74,6 +73,7 @@ div.inner-main {
 }
 
 /* Headers */
+/* ------- */
 
 h1 {
     font-variant: normal;
@@ -92,11 +92,13 @@ h3 {
     font-weight: bold;
 }
 
-h3.date {
-    color: #DED2BA;
+h4 {
     font-variant: normal;
+    font-weight: bold;
+    color: #DED2BA;
     font-style: italic;
     font-size: small;
+    text-decoration: none;
 }
 
 a:link {
@@ -136,6 +138,10 @@ th.c {
 td.c {
     text-align: center;
 }
+
+/* Footer Code */
+/* ----------- */
+
 
 footer {
     padding: 10px;
