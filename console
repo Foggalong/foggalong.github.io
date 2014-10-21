@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
-	<title>Console | fogg.me.uk</title>
+	<title>Home | fogg.me.uk</title>
 	<meta name="description" content="Simple Personal Website"> 
 	<meta name="keywords" content="Blog, Programming"> 
 	<meta name="author" content="Joshua Fogg"> 
 	<meta charset="UTF-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="http://fogg.me.uk/style/console.css">
+	<link rel="stylesheet" type="text/css" href="http://fogg.me.uk/style/main.css">
 	<link rel="icon" href="http://fogg.me.uk/images/icons/flav.ico">
 	<link rel="shortcut icon" href="http://fogg.me.uk/images/icons/flav.ico">
 </head>
@@ -22,11 +23,29 @@
 				<img class="image" src="http://fogg.me.uk/images/nav/home.svg" alt="Home">
 			</a>
 		</li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog">Blog</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/work">Work</a></li>
+		<li class="nav">
+			<a class="nav" href="http://fogg.me.uk/blog">
+				<img class="image" src="http://fogg.me.uk/images/nav/blog.svg" alt="Blog">
+			</a>
+		</li>
+		<li class="nav">
+			<a class="nav" href="http://fogg.me.uk/work">
+				<img class="image" src="http://fogg.me.uk/images/nav/work.svg" alt="Work">
+			</a>
+		</li>
 		<li class="nav">
 			<a class="nav" href="http://fogg.me.uk/about">
 				<img class="image" src="http://fogg.me.uk/images/nav/about.svg" alt="About">
+			</a>
+		</li>
+		<li class="nav" style="float: right;">
+			<a class="nav" href="#comments">
+				<img class="image" src="http://fogg.me.uk/images/nav/comments.svg" alt="Comments">
+			</a>
+		</li>
+		<li class="nav" style="float: right;">
+			<a class="nav" href="#">
+				<img class="image" src="http://fogg.me.uk/images/nav/top.svg" alt="Top">
 			</a>
 		</li>
 	</ul>
