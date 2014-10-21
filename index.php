@@ -3,12 +3,12 @@
 
 <head>
 	<title>Home | fogg.me.uk</title>
-	<?php include "http://fogg.me.uk/php/meta.php";?>
+	<?php include "php/meta.php";?>
 </head>
 
 <body>
 
-<?php include "http://fogg.me.uk/php/navbar.php";?>
+<?php include "php/navbar.php";?>
 
 <br><br>
 
@@ -39,7 +39,7 @@
 <!-- End Konami -->
 
 <footer>
-	<?php include "http://fogg.me.uk/php/foot.php";?>
+	<?php include "php/foot.php";?>
 </footer>
 
 </body>
