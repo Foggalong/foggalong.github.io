@@ -22,11 +22,29 @@
 				<img class="image" src="http://fogg.me.uk/images/nav/home.svg" alt="Home">
 			</a>
 		</li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog">Blog</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/work">Work</a></li>
+		<li class="nav">
+			<a class="nav" href="http://fogg.me.uk/blog">
+				<img class="image" src="http://fogg.me.uk/images/nav/blog.svg" alt="Blog">
+			</a>
+		</li>
+		<li class="nav">
+			<a class="nav" href="http://fogg.me.uk/work">
+				<img class="image" src="http://fogg.me.uk/images/nav/work.svg" alt="Work">
+			</a>
+		</li>
 		<li class="nav">
 			<a class="nav" href="http://fogg.me.uk/about">
 				<img class="image" src="http://fogg.me.uk/images/nav/about.svg" alt="About">
+			</a>
+		</li>
+		<li class="nav" style="float: right;">
+			<a class="nav" href="#comments">
+				<img class="image" src="http://fogg.me.uk/images/nav/about.svg" alt="Comments">
+			</a>
+		</li>
+		<li class="nav" style="float: right;">
+			<a class="nav" href="#">
+				<img class="image" src="http://fogg.me.uk/images/nav/top.svg" alt="Top">
 			</a>
 		</li>
 	</ul>
@@ -50,18 +68,18 @@
 <script type="text/javascript">
 	if ( window.addEventListener ) {  
 		var state = 0, konami = [38,38,40,40,37,39,37,39,66,65];  
-  		window.addEventListener("keydown", function(e) {  
-			if ( e.keyCode == konami[state] ) state++;  
-    			else state = 0;  
-    			if ( state == 10 )  
-      				window.location = "console";
-    			}, true);  
+		window.addEventListener("keydown", function(e) {  
+		if ( e.keyCode == konami[state] ) state++;  
+				else state = 0;  
+				if ( state == 10 )  
+					window.location = "console";
+				}, true);  
 	}  
 </script>
 <!-- End Konami -->
 
 <footer>
-	<br><a href="http://fogg.me.uk/license" class="foot">Copyright</a> © 2014 Joshua Fogg. Made using <a href="https://github.com/Foggalong/wren" class="foot">Wren</a>.<br>
+	<br><a href="http://fogg.me.uk/license" class="foot">Copyright</a> © 2014 Joshua Fogg · Made using <a href="https://github.com/Foggalong/wren" class="foot">Wren</a>.<br>
 </footer>
 
 </body>
