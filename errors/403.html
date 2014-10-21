@@ -2,59 +2,17 @@
 <html>
 
 <head>
-	<title>Home | fogg.me.uk</title>
-	<meta name="description" content="Simple Personal Website"> 
-	<meta name="keywords" content="Blog, Programming"> 
-	<meta name="author" content="Joshua Fogg"> 
-	<meta charset="UTF-8"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="http://fogg.me.uk/style/main.css">
-	<link rel="icon" href="http://fogg.me.uk/images/icons/flav.ico">
-	<link rel="shortcut icon" href="http://fogg.me.uk/images/icons/flav.ico">
+	<title>403 | fogg.me.uk</title>
+	<?php include "../php/meta.php";?>
 </head>
 
 <body>
 
-<div class="nav">
-	<ul class="nav">
-		<li class="nav">
-			<a class="nav" href="http://fogg.me.uk/">
-				<img class="image" src="http://fogg.me.uk/images/nav/home.svg" alt="Home">
-			</a>
-		</li>
-		<li class="nav">
-			<a class="nav" href="http://fogg.me.uk/blog">
-				<img class="image" src="http://fogg.me.uk/images/nav/blog.svg" alt="Blog">
-			</a>
-		</li>
-		<li class="nav">
-			<a class="nav" href="http://fogg.me.uk/work">
-				<img class="image" src="http://fogg.me.uk/images/nav/work.svg" alt="Work">
-			</a>
-		</li>
-		<li class="nav">
-			<a class="nav" href="http://fogg.me.uk/about">
-				<img class="image" src="http://fogg.me.uk/images/nav/about.svg" alt="About">
-			</a>
-		</li>
-		<li class="nav" style="float: right;">
-			<a class="nav" href="#comments">
-				<img class="image" src="http://fogg.me.uk/images/nav/comments.svg" alt="Comments">
-			</a>
-		</li>
-		<li class="nav" style="float: right;">
-			<a class="nav" href="#">
-				<img class="image" src="http://fogg.me.uk/images/nav/top.svg" alt="Top">
-			</a>
-		</li>
-	</ul>
-</div>
-
-<br><br>
+<?php include "../php/navbar.php";?>
 
 <div class="outer-main">
 	<div class="inner-main">
-		<h2 class="main-title">403: Forbidden Page</h2>
+		<h1>403: Forbidden Page</h1>
 		<h2>Tut-tut.</h2>
 		<p>You're not supposed to be here - move along now! If you think this has happened in error please <a href="https://github.com/Foggalong/fogg.me.uk/issues">report the problem</a> on the websites GitHub page.</p>
 	</div>
@@ -63,7 +21,7 @@
 </body>
 
 <footer>
-	<a href="http://fogg.me.uk/license" class="foot">Copyright</a> © 2014 Joshua Fogg · <a href="http://validator.w3.org/check?uri=referer" class="foot">HTML5</a> · Made using <a href="https://github.com/Foggalong/wren" class="foot">Wren</a></li>
+	<?php include "../php/foot.php";?>
 </footer>
 
 </html>
