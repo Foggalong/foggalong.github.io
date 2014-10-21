@@ -76,14 +76,8 @@ div.inner-main {
 /* Headers */
 
 h1 {
-/*    color: #2d2d2d;
-*/    font-variant: small-caps;
+    font-variant: normal;
     font-weight: bold;
-    text-transform:uppercase;
-    text-decoration: underline;
-}
-
-h2.main-title {
     font-size: 50px;
     text-align: center;
 }
