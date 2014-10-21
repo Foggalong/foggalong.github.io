@@ -166,6 +166,10 @@ ul.foot {
     overflow: hidden;
 }
 
+li.foot {
+    float: left;
+}
+
 a.foot:link, a.foot:visited {
     color:#3b8aff;
     text-decoration: none;
