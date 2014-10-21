@@ -101,6 +101,14 @@ h4 {
     text-decoration: none;
 }
 
+a.h4:link, a.h4:visited {
+    color:#3b8aff;
+    text-decoration: none;
+}
+
+/* Links */
+/* ----- */
+
 a:link {
     color: #6699CC;
 }
@@ -109,7 +117,6 @@ a:visited {
     color: #660099;
 }
 
-/*For use with external links*/
 a.external:hover {
     color: orange;
     font-style: italic;
@@ -141,7 +148,6 @@ td.c {
 
 /* Footer Code */
 /* ----------- */
-
 
 footer {
     padding: 10px;

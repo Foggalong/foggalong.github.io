@@ -19,12 +19,16 @@
 	<ul class="nav">
 		<li class="nav">
 			<a class="nav" href="http://fogg.me.uk/">
-				<img class="image" src="images/nav/home.svg" alt="Home">
+				<img class="image" src="http://fogg.me.uk/images/nav/home.svg" alt="Home">
 			</a>
 		</li>
 		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog">Blog</a></li>
 		<li class="nav"><a class="nav" href="http://fogg.me.uk/work">Work</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/about">About</a></li>
+		<li class="nav">
+			<a class="nav" href="http://fogg.me.uk/about">
+				<img class="image" src="http://fogg.me.uk/images/nav/about.svg" alt="About">
+			</a>
+		</li>
 	</ul>
 </div>
 
@@ -38,9 +42,9 @@
 
 <div class="outer-main">
 	<div class="inner-main">
-		<h4 align="right">2014 - 01 - 27</h3>
+		<h4 align="right">2014 - 01 - 27</h4>
 		<h2>Facebook mobile - Privacy &amp; Tinfoil</h2>
-		<h4 align="left">~2 minutes 50 seconds <a href="http://fogg.me.uk/blogs/reading">reading</a></h3>
+		<h4 align="left">~2 minutes 50 seconds <a class="h4" href="http://fogg.me.uk/blog/reading">reading</a></h4>
 		<article>
 			<p>Chances are if you're reading this you have a Facebook account. In fact, as of December last year over 1.23 billion people were using the social network on a regular basis which equates to nearly 1 in 5 people globally.</p>
 
