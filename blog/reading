@@ -63,7 +63,7 @@
 <div class="outer-main">
 	<div class="inner-main">
 		<h2>What's the time?</h2>
-		<h3 class="date" align="left">~1 minutes 22 seconds reading</h3>
+		<h4 align="left">~1 minutes 22 seconds reading</h3>
 		<article>
 			<p>About six thirty. But in all seriousness you may have noticed the time that is appended to the top of each of my blogs along the lines of “~2 minutes 50 seconds reading”. This is an approximated reading time for that particular blog.</p>
 
@@ -106,8 +106,8 @@
 	</div>
 </div>
 
-<footer style="width: 80px; margin-left: auto; margin-right: auto;">
-	<br>
+<footer>
+	<br><a href="http://fogg.me.uk/license" class="foot">Copyright</a> © 2014 Joshua Fogg · Made using <a href="https://github.com/Foggalong/wren" class="foot">Wren</a>.<br>
 </footer>
 
 </body>

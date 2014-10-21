@@ -62,9 +62,9 @@
 
 <div class="outer-main">
 	<div class="inner-main">
-		<h3 class="date" align="right">2014 - 06 - 01</h3>
+		<h4 align="right">2014 - 06 - 01</h3>
 		<h2>Blog Title Goes Here</h2>
-		<h3 class="date" align="left">[time here]</h3>
+		<h4 align="left">[time here]</h3>
 		# <!-- <a http://en.wikipedia.org/wiki/Words_per_minute#Reading_and_comprehension -->
 		<article>
 			<p>Blog content goes here.</p>
@@ -92,8 +92,8 @@
 	</div>
 </div>
 
-<footer style="width: 80px; margin-left: auto; margin-right: auto;">
-	<br>
+<footer>
+	<br><a href="http://fogg.me.uk/license" class="foot">Copyright</a> © 2014 Joshua Fogg · Made using <a href="https://github.com/Foggalong/wren" class="foot">Wren</a>.<br>
 </footer>
 
 </body>
