@@ -33,6 +33,10 @@ li.nav {
     float: left;
 }
 
+li.nav-r {
+    float: right;
+}
+
 a.nav:link, a.nav:visited {
     padding: 10px;
     display: block;
