@@ -369,12 +369,12 @@
 
 			<p>Do I regret doing it? A little bit. It was very satisfying to see all of the pieces together in one place and to think about how much fun I'll have with so many pieces to choose from. At the same time knowing I'll never be able to seperate them back out and put them back in their boxes (which have all been recycled now) pains me a little. But I'm a horder and if I truly want to change that I've got to make sacrefices. So off they went. On the whole, I'm still glad I did it.</p>
 		</article>
-		<?php include "http://fogg.me.uk/php/comments.php";?>
+		<?php include "../php/comments.php";?>
 	</div>
 </div>
 
 <footer>
-	<a href="http://fogg.me.uk/license" class="foot">Copyright</a> © 2014 Joshua Fogg · <a href="http://validator.w3.org/check?uri=referer" class="foot">HTML5</a> · Made using <a href="https://github.com/Foggalong/wren" class="foot">Wren</a></li>
+	<?php include "php/comments.php"; ?>
 </footer>
 
 </body>
