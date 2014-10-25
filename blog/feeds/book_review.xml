@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog | fogg.me.uk</title>
+    <?php include "../../php/meta.php";?>
+</head>
+
+<body>
+
+<?php include "../../php/navbar.php";?>
+
+<div class="outer-main">
+    <div class="inner-main">
+        <h2 title="Currently all Lorem ipsum">Blog Catagory: <em>book review</em></h2>
+        <p> A history of my book review content.
+        <ul>
+            <!-- List Begins Here -->
+            <li><a href="../2014/03/08/TheHitchhikersGuidetotheGalaxy">2014-03-08 - The Hitchhiker's Guide to the Galaxy </a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+
+<footer>
+    <?php include "../../php/foot.php";?>
+</footer>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog | fogg.me.uk</title>
+    <?php include "../../php/meta.php";?>
+</head>
+
+<body>
+
+<?php include "../../php/navbar.php";?>
+
+<div class="outer-main">
+    <div class="inner-main">
+        <h2 title="Currently all Lorem ipsum">Blog Catagory: <em>blog</em></h2>
+        <p> A history of my blog content.
+        <ul>
+            <!-- List Begins Here -->
+            <li><a href="../2014/06/17/30DaySongChallenge">2014-06-17 - 30 Day Song Challenge</a></li>
+            <li><a href="../2014/06/14/SixThirty">2014-06-14 - What's the time?</a></li>
+            <li><a href="../2014/06/09/EducatingforGlobalisation">2014-06-09 - Educating for Globalisation</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+
+<footer>
+    <?php include "../../php/foot.php";?>
+</footer>
+
+</html>

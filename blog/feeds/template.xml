@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog | fogg.me.uk</title>
+    <?php include "../../php/meta.php";?>
+</head>
+
+<body>
+
+<?php include "../../php/navbar.php";?>
+
+<div class="outer-main">
+    <div class="inner-main">
+        <h2 title="Currently all Lorem ipsum">Blog Catagory: <em>[template]</em></h2>
+        <p> A history of my [template] content.
+        <ul>
+            <!-- List Begins Here -->
+        </ul>
+    </div>
+</div>
+
+</body>
+
+<footer>
+    <?php include "../../php/foot.php";?>
+</footer>
+
+</html>
