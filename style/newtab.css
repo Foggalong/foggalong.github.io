@@ -7,48 +7,48 @@ td {text-align:center;
     vertical-align:middle;};
 
 body {
-	background-color: #353535;
-	background-image: url("/images/background/newtab.jpg");
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: center;
-	margin: 2em 5em;
-	padding: 1em;
+    background-color: #353535;
+    background-image: url("/images/background/newtab.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 2em 5em;
+    padding: 1em;
 }
 
 html {
-	background: url("/images/background/newtab.jpg");
+    background: url("/images/background/newtab.jpg");
 }
 
 
 ul {
-	font-family: trebuchet, arial, sans-sherif;
+    font-family: trebuchet, arial, sans-sherif;
 }
 
 table {
-	border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 th {
-	color: #AEA79F;
-	font-family: trebuchet, arial, sans-sherif;
-	font-weight: bold;
-	font-size: 20px;
+    color: #AEA79F;
+    font-family: trebuchet, arial, sans-sherif;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 td {
-	font-family: trebuchet, arial, sans-sherif;
+    font-family: trebuchet, arial, sans-sherif;
 }
 
 .search {
-	padding: 1.3em 0.8em 1em;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	float: none;
-	width: 300px;
-	height: 30px;
+    padding: 1.3em 0.8em 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    float: none;
+    width: 300px;
+    height: 30px;
