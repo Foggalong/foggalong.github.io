@@ -118,15 +118,11 @@ a.h4:link, a.h4:visited {
 
 a:link {
     color: #6699CC;
+    text-decoration: none;
 }
 
 a:visited {
     color: #660099;
-}
-
-a.external:hover {
-    color: orange;
-    font-style: italic;
 }
 
 
