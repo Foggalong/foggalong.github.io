@@ -9,6 +9,7 @@ body {
     margin: 50px 30px 10px 30px;
 }
 
+
 /* Navigation Bar */
 /* -------------- */
 
@@ -56,6 +57,7 @@ a.nav:hover, a.nav:active {
     color: #f9f9f9;
 }
 
+
 /* Page Canvas */
 /* ----------- */
 
@@ -74,6 +76,7 @@ div.inner-main {
     margin-right: auto;
     opacity: 1;
 }
+
 
 /* Headers */
 /* ------- */
@@ -109,6 +112,7 @@ a.h4:link, a.h4:visited {
     text-decoration: none;
 }
 
+
 /* Links */
 /* ----- */
 
@@ -125,29 +129,6 @@ a.external:hover {
     font-style: italic;
 }
 
-li.front {
-    padding: 5px;
-}
-
-#id-picture {
-    float:left;
-    width: 250px;
-    padding-bottom: 15px;
-    padding-right: 15px;
-}
-
-th {
-    color: #000033;
-}
-
-th.c {
-    color: #000033;
-    text-align: center;
-}
-
-td.c {
-    text-align: center;
-}
 
 /* Footer Code */
 /* ----------- */
@@ -163,4 +144,35 @@ footer {
 a.foot:link, a.foot:visited {
     color:#3b8aff;
     text-decoration: none;
+}
+
+
+/* Other */
+/* ----- */
+
+#id-picture {
+    float: left;
+    width: 250px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+}
+
+
+table.c {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    color: #000033;
+}
+
+th.c {
+    color: #000033;
+    text-align: center;
+}
+
+td.c {
+    color: #000033;
+    text-align: center;
 }
