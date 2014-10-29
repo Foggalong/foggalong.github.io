@@ -1,25 +1,59 @@
 #!/usr/bin/python3
 
-# Importing Modules
+# This is the updater for the Wren blogging platform.
+# Before running this script please familiarise your-
+# self with the instructions in the readme.md file.
+
+from os import getcwd
+from shutil import copy
 from sys import argv
-import os
-
-# Standardised error
-def error(message):
-    print("ERROR: %s" % message)
-    exit()
+from time import sleep
 
 
-# Initial error checks
+# Thes function allows for timeout when the Wren
+# updater is run via the "Run In Terminal" command
+def gerror(message):
+    print("ERROR: {0}".format(message))
+    sleep(3)
+    exit(1)
 
-# Check for usage error
-try:
-    script, file_name = argv
-    print("Updating...")
-except:
-    error("must have exactly one argument")
 
-# Checks file exists, moves it to a list
+# Checks running from the Wren directory so that
+# the relative locations of files can be known
+if ".wren" not in getcwd():
+    gerror("please run from the .Wren directory")
+else:
+    print("Updating blog...")
+
+
+with open(file_name, 'r') as file:
+    record, HTMLcontent = False, []
+    for line in file:
+        if record == True:
+            HTMLcontent.append(line)
+        elif record == False:
+            if "<article>" in line:
+                record = True
+            elif "</article>" in line:
+                record = False
+
+
+# Strips out the HTML tags in order to calculate
+# the approximate reading time.
+
+TXTcontent = []
+for line in HTMLcontent:
+    raw = ''
+    record = True
+    for i in line:
+        if i == "<":
+            record = False
+        elif i == ">":
+            record = True
+        elif record == True:
+            raw += i
+    TXTcontent.append(raw)
+        
 try:
     with open(file_name, 'r+') as file:
         target = [line.strip() for line in file]
