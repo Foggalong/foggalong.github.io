@@ -1,4 +1,3 @@
-[fogg.me.uk](http://fogg.me.uk)
-===================
+# [fogg.me.uk](http://fogg.me.uk)
 
-My website, previously found at foggalong.github.io and foggalong.comlu.com
+My personal website, made using [Wren](http://github.com/Foggalong/Wren).
