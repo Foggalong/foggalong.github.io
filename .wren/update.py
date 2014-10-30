@@ -7,6 +7,7 @@
 from datetime import datetime
 from math import floor
 from os import getcwd
+from re import search, sub
 from shutil import copy
 from sys import argv
 from time import sleep
@@ -72,20 +73,44 @@ else:
 
 
 print("Please enter the following data as prompted")
+
+
 title = input("\nTitle:\n")
 catagories = input("\nCatagories:\n").split(" ")
 summary = input("\nSummary:\n")
 
 # YYYY-MM-DD
 datesmll = datetime.date(datetime.now())
+# YYYY/MM/DD
+filedate = datesmll.replace("-", "/")
 # Day DD Mon YYYY HH:MM:SS
 datelong = datetime.ctime(datetime.now())
 # Day, DD Mon YYYY HH:MM:SS TMZ
 datelong = ", ".join(datelong.split(" ", 1)) + " GMT"
 
 
+# Data used in URLs has to be devoid of any special characters
+# that could cause problems. Because of that, characters not
+# in the range a-z or 0-1 are removed from certain values.
+
+def clean(string):
+    tmp = list(string.lower().strip())
+    tmp = [i for i in tmp if search("[^a-z0-9]", i) == None]
+    return "".join(tmp)
+
+urltitle = clean(title)
+
+tmp = []
+for item in catagories:
+    item = clean(item)
+    if len(item) != 0:
+        tmp.append(item)
+catagories = tmp
+
+
 print("\nGIVEN INFORMATION")
 print("Title:", title)
+print("URL title:", urltitle)
 print("Short date:", datesmll)
 print("Long date:", datelong)
 print("Catagories:", catagories)
@@ -101,51 +126,59 @@ while q == 0:
         gerror("meta data rejected")
 print("Meta data accepted")
 
-exit()
+
+with open("catdat.csv", "r") as file:
+    catdat = [line.strip() for line in file]
+catnames = [line.split(",")[0] for line in catdat]
+catcount = [line.split(",")[1] for line in catdat]
+
+catnames.pop(0)
+catcount.pop(0)
 
 
-# Managing new catagories
+newcat = []
+for item in catagories:
+    if item not in catnames:
+        newcat.append(item)
 
-for entry in new_catagories:
-    # Creating New Lists
-    entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'w')
-    entry_list.write(open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/template").read())
-    entry_list.close()
-    with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'r+') as file:
-        new_list = [line for line in file]
-    for line in new_list:
-        if "[template]" in line:
-            old_line, n = line, new_list.index(line)
-            new_list.pop(n)
-            new_list.insert(n, old_line.replace("[template]", entry))
-    entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'w')
-    entry_list.truncate()
-    for line in new_list:
-        entry_list.write(line)
-    entry_list.close()
-    print("Created %s catagory" % entry)
 
-# Adding to word cloud - untested
-for entry in blog_catagories:
-    with open("//home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/cloud.txt", 'r') as file:
-        cat_list = [line for line in file]
-    cat_list.append(entry+"\n")
-    cloud_file = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/cloud.txt", 'w')
-    for line in cat_list:
-        cloud_file.write(line)
-    cloud_file.close()
-    print("Added %s catagory to word cloud file" % entry)
+def sed(find, replace, target):
+    with open(target, "r") as file:
+        lines = file.readlines()
+    with open(target, "w") as file:
+        for line in lines:
+            file.write(sub(find, replace, line))
+
+for cat in newcat:
+    copy("feed-template.xml", "../blog/feeds/" + cat + ".xml")
+    copy("cat-template.html", "../blog/cat/" + cat + ".html")
+    sed("TEMPLATE", cat, "../blog/feeds/" + cat + ".xml")
+    sed("TEMPLATE", cat, "../blog/cat/" + cat + ".html")
+    catnames.append(cat)
+    catcount.append(0)
+    print("Created" + cat + "catagory")
+
+for cat in catagories:
+    pos = catnames.index(cat)
+    count = catcount[pos] + 1
+    catcount.pop(pos)
+    catcount.insert(pos, count)
+
+with open("catdat.csv", "w") as file:
+    for x in range(0, len(catnames)-1)):
+        file.write(catnames[x] + "," + catcount[x])
+
 
 
 # Adding Blog to Catagory Lists
-for entry in (blog_catagories+["all"]):
-    with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'r+') as file:
+for entry in (catagories + ["all"]):
+    with open("../blog/cat/" + entry + ".html", "r") as file:
         file_list = [line for line in file]
     for line in file_list:
         if "<!-- List Begins Here -->" in line:
             n = file_list.index(line)
-            file_list.insert(n+1, '            <li><a href="../'+blog_date+'_'+blog_title.replace(' ','')+'">'+blog_date+'     '+blog_title+'</a></li>\n')
-    entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/"+entry, 'w')
+            file_list.insert(n + 1, '            <li><a href="../' + filedate + '/'+ urltitle + '">' + datesmll + '     ' + title +'</a></li>\n')
+    entry_list = open("../blog/cat/" + entry + ".html", "w")
     entry_list.truncate()
     for line in file_list:
         entry_list.write(line)
