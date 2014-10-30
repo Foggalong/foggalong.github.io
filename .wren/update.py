@@ -4,6 +4,7 @@
 # Before running this script please familiarise your-
 # self with the instructions in the readme.md file.
 
+from datetime import datetime
 from math import floor
 from os import getcwd
 from shutil import copy
@@ -69,87 +70,27 @@ else:
     secs = int(((len(text)/float(200))-mins)*60)
     readtime = "~{0} minutes {1} seconds reading".format(mins, secs)
 
-print(HTMLcontent)
-print("\n")
-print(TXTcontent)
-print(readtime)
 
-exit()
+print("Please enter the following data as prompted")
+title = input("\nTitle:\n")
+catagories = input("\nCatagories:\n").split(" ")
+summary = input("\nSummary:\n")
 
-try:
-    with open(file_name, 'r+') as file:
-        target = [line.strip() for line in file]
-except:
-    error("file does not exist")
-print("File read to list")
+# YYYY-MM-DD
+datesmll = datetime.date(datetime.now())
+# Day DD Mon YYYY HH:MM:SS
+datelong = datetime.ctime(datetime.now())
+# Day, DD Mon YYYY HH:MM:SS TMZ
+datelong = ", ".join(datelong.split(" ", 1)) + " GMT"
 
 
-# Meta Validation
-
-# Information finder
-information, errors = [], []
-for line in target:
-    if "BLOG INFORMATION DATA" in line:
-        information.append(line)
-    elif len(information) != 0:
-        if len(information) < 5:
-            information.append(line)
-if len(information) == 0:
-    error("no blog information found")
-
-# Title information checker
-if (":> " in information[1] and len(information[1].split(":> ")) == 2):
-    try:    
-        blog_title = information[1].split(":> ")[1].split(" -->")[0].replace("-->","")
-    except:
-        error("invalid title given")
-else:
-    error("invalid title given")
-
-# Date information checker
-if (":> " in information[2] and len(information[2].split(":> ")) == 2):
-    try:    
-        blog_date = information[2].split(":> ")[1].split(" -->")[0]
-    except:
-        error("invalid date given")
-else:
-    error("invalid date given")
-
-# Catagories information checker
-if (":> " in information[3] and len(information[3].split(":> ")) == 2):
-    try:    
-        blog_catagories = information[3].split(":> ")[1].split(" -->")[0].split(", ")
-        list_files = os.listdir("/home/josh/Programs/Web/HTML/fogg.me.uk/blogs/Catagories/")
-        non_catagories, known_catagories, new_catagories = ["all", "template"], [], [] 
-        for entry in list_files:
-            if entry in non_catagories:
-                pass
-            else:
-                known_catagories.append(entry)
-        for entry in blog_catagories:
-            if entry not in known_catagories:
-                new_catagories.append(entry)
-    except:
-        error("invalid catagories given")
-else:
-    error("invalid catagories given")
-
-# Summary information checker
-if (":> " in information[4] and len(information[4].split(":> ")) == 2):
-    try:    
-        blog_summary = information[4].split(":> ")[1].split(" -->")[0]
-    except:
-        error("invalid summary given")
-else:
-    error("invalid summary given")
-
-# Correct information checker
-print("Passed data error check")
 print("\nGIVEN INFORMATION")
-print("Title:",blog_title)
-print("Date:",blog_date)
-print("Catagories:",blog_catagories)
-print("Summary:",blog_summary,"\n")
+print("Title:", title)
+print("Short date:", datesmll)
+print("Long date:", datelong)
+print("Catagories:", catagories)
+print("Summary:", summary,"\n")
+
 q = 0
 while q == 0:
     ans = input("Are you happy with the above? (y/n) ")
@@ -157,11 +98,10 @@ while q == 0:
         q = 1
         pass
     elif ans == "n":
-        error("blog data rejected")
-    else:
-        pass
-print("Blog data accepted")
+        gerror("meta data rejected")
+print("Meta data accepted")
 
+exit()
 
 
 # Managing new catagories
