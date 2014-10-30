@@ -4,6 +4,7 @@
 # Before running this script please familiarise your-
 # self with the instructions in the readme.md file.
 
+from math import floor
 from os import getcwd
 from shutil import copy
 from sys import argv
@@ -12,6 +13,7 @@ from time import sleep
 
 # Thes function allows for timeout when the Wren
 # updater is run via the "Run In Terminal" command
+
 def gerror(message):
     print("ERROR: {0}".format(message))
     sleep(3)
@@ -20,26 +22,26 @@ def gerror(message):
 
 # Checks running from the Wren directory so that
 # the relative locations of files can be known
+
 if ".wren" not in getcwd():
     gerror("please run from the .Wren directory")
 else:
     print("Updating blog...")
 
 
-with open(file_name, 'r') as file:
+with open("blog-new.html", 'r') as file:
     record, HTMLcontent = False, []
     for line in file:
-        if record == True:
+        if "<article>" in line:
+            record = True
+        elif "</article>" in line:
+            record = False
+        elif record is True:
             HTMLcontent.append(line)
-        elif record == False:
-            if "<article>" in line:
-                record = True
-            elif "</article>" in line:
-                record = False
 
 
-# Strips out the HTML tags in order to calculate
-# the approximate reading time.
+# Strips out the HTML tags and white space in order
+# to calculate the approximate reading time.
 
 TXTcontent = []
 for line in HTMLcontent:
@@ -50,10 +52,30 @@ for line in HTMLcontent:
             record = False
         elif i == ">":
             record = True
-        elif record == True:
+        elif record is True:
             raw += i
-    TXTcontent.append(raw)
-        
+    TXTcontent.append(raw.strip())
+text = " ".join(TXTcontent)
+
+
+# This calculates the approximate reading time for
+# the blog.
+
+if len(text)/200 < 1:
+    secs = int(float(len(text))*0.3)
+    readtime = "~{0} seconds reading".format(secs)
+else:
+    mins = int(floor(len(text)/float(200)))
+    secs = int(((len(text)/float(200))-mins)*60)
+    readtime = "~{0} minutes {1} seconds reading".format(mins, secs)
+
+print(HTMLcontent)
+print("\n")
+print(TXTcontent)
+print(readtime)
+
+exit()
+
 try:
     with open(file_name, 'r+') as file:
         target = [line.strip() for line in file]
