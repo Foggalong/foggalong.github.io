@@ -9,7 +9,6 @@ from math import floor
 from os import getcwd, makedirs, path
 from re import search, sub
 from shutil import copy
-from sys import argv
 from time import sleep
 
 
@@ -207,8 +206,8 @@ for cat in (catagories + ["all"]):
         lines = [line for line in file]
     for line in lines:
         if "<!-- List Begins Here -->" in line:
-            n = file_list.index(line)
-            file_list.insert(n + 1, ' ' * 12 + newline + "\n")
+            n = lines.index(line)
+            lines.insert(n + 1, ' ' * 12 + newline + "\n")
     catfile = open("../blog/cat/" + cat + ".html", "w")
     catfile.truncate()
     for line in lines:
