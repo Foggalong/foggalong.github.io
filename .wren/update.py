@@ -167,11 +167,9 @@ sed("BLOGCONTENT", "".join(HTMLcontent), dest)
 
 with open("catdat.csv", "r") as file:
     catdat = [line.strip() for line in file]
+catdat.pop(0)
 catnames = [line.split(",")[0] for line in catdat]
 catcount = [int(line.split(",")[1]) for line in catdat]
-
-catnames.pop(0)
-catcount.pop(0)
 
 newcat = []
 for item in catagories:
