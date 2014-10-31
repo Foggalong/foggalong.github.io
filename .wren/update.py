@@ -95,7 +95,7 @@ datelong = ", ".join(datelong.split(" ", 1)) + " GMT"
 
 def clean(string):
     tmp = list(string.lower().strip())
-    tmp = [i for i in tmp if search("[^a-z0-9]", i) == None]
+    tmp = [i for i in tmp if search("[^a-z0-9]", i) is None]
     return "".join(tmp)
 
 urltitle = clean(title)
@@ -114,7 +114,7 @@ print("URL title:", urltitle)
 print("Short date:", datesmll)
 print("Long date:", datelong)
 print("Catagories:", catagories)
-print("Summary:", summary,"\n")
+print("Summary:", summary, "\n")
 
 q = 0
 while q == 0:
@@ -165,63 +165,66 @@ for cat in catagories:
     catcount.insert(pos, count)
 
 with open("catdat.csv", "w") as file:
-    for x in range(0, len(catnames)-1)):
+    for x in range(0, len(catnames)-1):
         file.write(catnames[x] + "," + catcount[x])
 
 
+# This inserts a single line of HTML which links to the new
+# blog into each of the catagory lists which it falls into.
 
-# Adding Blog to Catagory Lists
-for entry in (catagories + ["all"]):
-    with open("../blog/cat/" + entry + ".html", "r") as file:
-        file_list = [line for line in file]
-    for line in file_list:
+newline = '<li><a href="../{0}/{1}">{2}     {3}</a></li>'
+newline = newline.format(filedate, urltitle, datesmll, title)
+for cat in (catagories + ["all"]):
+    with open("../blog/cat/" + cat + ".html", "r") as file:
+        lines = [line for line in file]
+    for line in lines:
         if "<!-- List Begins Here -->" in line:
             n = file_list.index(line)
-            file_list.insert(n + 1, '            <li><a href="../' + filedate + '/'+ urltitle + '">' + datesmll + '     ' + title +'</a></li>\n')
-    entry_list = open("../blog/cat/" + entry + ".html", "w")
-    entry_list.truncate()
-    for line in file_list:
-        entry_list.write(line)
-    entry_list.close()
-    print("Added blog to %s catagory list" % entry)
+            file_list.insert(n + 1, ' ' * 12 + newline + "\n")
+    catfile = open("../blog/cat/" + cat + ".html", "w")
+    catfile.truncate()
+    for line in lines:
+        catfile.write(line)
+    catfile.close()
+    print("Added blog to", cat, "catagory list")
 
 
-# Adding blog to Recent Blogs page
-with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blog", 'r+') as file:
-    file_list = [line for line in file]
-for line in file_list:
+# The main blogs page lists the 5 most recent blogs posted so
+# adding this new one means also removing the least recent.
+
+newline = " " * 4 + '<h3> <a href="blogs/{0}_{1}>{2}</a> - {3}</h3>'
+newlines = [
+    "<article>",
+    newline.format(filedate, urltitle, title, datesmll),
+    " " * 4 + '<p>' + summary + '</p>',
+    "</article>\n",
+    '<br class="small">\n'
+]
+
+with open("../blog/index.html", 'r') as file:
+    lines = [line for line in file]
+for line in lines:
     if "<!-- Recent Blogs Begin Here -->" in line:
-        n = file_list.index(line)
-        file_list.insert(n+1, '        <article>\n')
-        file_list.insert(n+2, '            <h3> <a href="blogs/'+blog_date+'_'+blog_title.replace(' ','')+'">'+blog_title+'</a> - '+blog_date+'</h3>\n')
-        file_list.insert(n+3, '            <p>'+blog_summary+'</p>\n')
-        file_list.insert(n+4, '        </article>\n')
-        file_list.insert(n+5, '\n')
-        file_list.insert(n+6, '        <br class="small">\n')
-        file_list.insert(n+7, '\n')
-entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blog", 'w')
-entry_list.truncate()
-for line in file_list:
-    entry_list.write(line)
-entry_list.close()
-print("Added blog to recent blogs page")
-
-
-# Removing the least recent blog from Recent Blogs page
-with open("/home/josh/Programs/Web/HTML/fogg.me.uk/blog", 'r+') as file:
-    file_list = [line for line in file]
-for line in file_list:
-    if "<!-- Recent Blogs End Here -->" in line:
-        n = file_list.index(line)
+        n = lines.index(line)
+        for x in range(0, 4):
+            lines.insert(x+1, " " * 8 + newlines[x] + "\n")
+    elif "<!-- Recent Blogs End Here -->" in line:
+        n = lines.index(line)
         for x in range(1, 8):
-            file_list.pop(n-x)
-entry_list = open("/home/josh/Programs/Web/HTML/fogg.me.uk/blog", 'w')
-entry_list.truncate()
+            lines.pop(n-x)
+blogfile = open("blog", 'w')
+blogfile.truncate()
 for line in file_list:
-    entry_list.write(line)
-entry_list.close()
-print("Removed least recent blog from recent blogs page")
+    blogfile.write(line)
+blogfile.close()
+print("Updated the main blogs page")
 
+
+# TODO
+# ====
+# + Update the word cloud
+# + Update the RSS feeds
+# + Creat the blog file
 
 # Program is finished!
 print("Done!\n")
