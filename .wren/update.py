@@ -6,7 +6,7 @@
 
 from datetime import datetime
 from math import floor
-from os import getcwd
+from os import getcwd, makedirs, path
 from re import search, sub
 from shutil import copy
 from sys import argv
@@ -152,6 +152,8 @@ print("Meta data accepted")
 # set for the destination rather than its current location
 
 dest = "../blog/{0}/{1}.html".format(filedate, urltitle)
+if not path.exists(path.dirname(dest)):
+    makedirs(path.dirname(dest))
 copy("blog-template.html", dest)
 sed("BLOGDATE", datesmll, dest)
 sed("BLOGTITLE", title, dest)
