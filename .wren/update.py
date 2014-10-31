@@ -179,9 +179,9 @@ for item in catagories:
         newcat.append(item)
 
 for cat in newcat:
-    copy("feed-template.xml", "../blog/feeds/" + cat + ".xml")
+    copy("feed-template.xml", "../blog/feed/" + cat + ".xml")
     copy("cat-template.html", "../blog/cat/" + cat + ".html")
-    sed("TEMPLATE", cat, "../blog/feeds/" + cat + ".xml")
+    sed("TEMPLATE", cat, "../blog/feed/" + cat + ".xml")
     sed("TEMPLATE", cat, "../blog/cat/" + cat + ".html")
     catnames.append(cat)
     catcount.append(0)
