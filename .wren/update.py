@@ -22,6 +22,19 @@ def gerror(message):
     exit(1)
 
 
+# At various points it's needed to have a function
+# that replaces all instances of a word in a file.
+# The easy solution would be to os.call 'sed' but
+# I wanted to avoid relying on outside programs.
+
+def sed(find, replace, target):
+    with open(target, "r") as file:
+        lines = file.readlines()
+    with open(target, "w") as file:
+        for line in lines:
+            file.write(sub(find, replace, line))
+
+
 # Checks running from the Wren directory so that
 # the relative locations of files can be known
 
@@ -30,6 +43,9 @@ if ".wren" not in getcwd():
 else:
     print("Updating blog...")
 
+
+# Extracts the blog body from the input file. It's fixed
+# so that the level of indentation doesn't need changing.
 
 with open("blog-new.html", 'r') as file:
     record, HTMLcontent = False, []
@@ -60,8 +76,9 @@ for line in HTMLcontent:
 text = " ".join(TXTcontent)
 
 
-# This calculates the approximate reading time for
-# the blog.
+# This calculates the approximate reading time for the blog.
+# The calculation is based upon an average screen-reading
+# rate of ~200 words per minute.
 
 if len(text)/200 < 1:
     secs = int(float(len(text))*0.3)
@@ -73,16 +90,18 @@ else:
 
 
 print("Please enter the following data as prompted")
-
-
 title = input("\nTitle:\n")
 catagories = input("\nCatagories:\n").split(" ")
 summary = input("\nSummary:\n")
 
+
+# The time of the blogs creation is needed in a variety of
+# formats, not all provide by the datetime module.
+
 # YYYY-MM-DD
 datesmll = datetime.date(datetime.now())
 # YYYY/MM/DD
-filedate = datesmll.replace("-", "/")
+filedate = sub(r"-", "/", str(datesmll))
 # Day DD Mon YYYY HH:MM:SS
 datelong = datetime.ctime(datetime.now())
 # Day, DD Mon YYYY HH:MM:SS TMZ
@@ -99,6 +118,7 @@ def clean(string):
     return "".join(tmp)
 
 urltitle = clean(title)
+url = "http://fogg.me.uk/blog/" + filedate + "/" + urltitle
 
 tmp = []
 for item in catagories:
@@ -110,7 +130,7 @@ catagories = tmp
 
 print("\nGIVEN INFORMATION")
 print("Title:", title)
-print("URL title:", urltitle)
+print("URL:", url)
 print("Short date:", datesmll)
 print("Long date:", datelong)
 print("Catagories:", catagories)
@@ -127,6 +147,22 @@ while q == 0:
 print("Meta data accepted")
 
 
+# Copies the blog data to the template file and then moves
+# it into place. The formatting for blog-template.html is
+# set for the destination rather than its current location
+
+dest = "../blog/{0}/{1}.html".format(filedate, urltitle)
+copy("blog-template.html", dest)
+sed("BLOGDATE", datesmll, dest)
+sed("BLOGTITLE", title, dest)
+sed("READINGTIME", readtime, dest)
+sed("BLOGCONTENT", HTMLcontent, dest)
+
+
+# When a new catagory is created it needs all the files
+# associated with it creating too, along with the existing
+# files that need to refrence it updating.
+
 with open("catdat.csv", "r") as file:
     catdat = [line.strip() for line in file]
 catnames = [line.split(",")[0] for line in catdat]
@@ -135,19 +171,10 @@ catcount = [line.split(",")[1] for line in catdat]
 catnames.pop(0)
 catcount.pop(0)
 
-
 newcat = []
 for item in catagories:
     if item not in catnames:
         newcat.append(item)
-
-
-def sed(find, replace, target):
-    with open(target, "r") as file:
-        lines = file.readlines()
-    with open(target, "w") as file:
-        for line in lines:
-            file.write(sub(find, replace, line))
 
 for cat in newcat:
     copy("feed-template.xml", "../blog/feeds/" + cat + ".xml")
@@ -172,8 +199,9 @@ with open("catdat.csv", "w") as file:
 # This inserts a single line of HTML which links to the new
 # blog into each of the catagory lists which it falls into.
 
-newline = '<li><a href="../{0}/{1}">{2}     {3}</a></li>'
-newline = newline.format(filedate, urltitle, datesmll, title)
+newline = '<li><a href="{0}">{1}     {2}</a></li>'
+newline = newline.format(url, datesmll, title)
+
 for cat in (catagories + ["all"]):
     with open("../blog/cat/" + cat + ".html", "r") as file:
         lines = [line for line in file]
@@ -189,14 +217,49 @@ for cat in (catagories + ["all"]):
     print("Added blog to", cat, "catagory list")
 
 
+# Insters a the nessisary lines into the XML files so that
+# the new blog shows up in the RSS feeds it alls into. Note
+# that this process doesn't currently remove any blogs from
+# the RSS file. This is recommended as it prevents the file
+# from becoming too big. I'll do some research and see what
+# others consider to be an acceptable cutoff point.
+
+newlines = [
+    "<item>",
+    "    <title>" + title + "</title>",
+    "    <link>" + url + "</link>",
+    "    <guid>" + url + "</guid>",
+    "    <pubDate>" + datelong + "</pubDate>",
+    "    <description>" + summary + "</description>",
+    "</item>\n"
+]
+
+for cat in (catagories + ["all"]):
+    with open("../blog/feed" + cat + ".xml", "r") as file:
+        lines = [line for line in file]
+    for line in lines:
+        if "<!-- List Begins Here -->" in line:
+            n = lines.index(line)
+            for x in range(0, 6):
+                lines.insert(x + 1, " " * 8 + newlines[x] + "\n")
+    catfeed = open("../blog/feed/" + cat + ".html", "w")
+    catfeed.turncate()
+    for line in lines:
+        catfeed.write(line)
+    catfeed.close()
+    print("Added blog to", cat, "RSS feed")
+
+
 # The main blogs page lists the 5 most recent blogs posted so
 # adding this new one means also removing the least recent.
+# IMPORTANT: this code currently just removes the least recent
+# post without checking if 5 blogs have actually been posted
+# yet. I'll try to correct this in future versions.
 
-newline = " " * 4 + '<h3> <a href="blogs/{0}_{1}>{2}</a> - {3}</h3>'
 newlines = [
     "<article>",
-    newline.format(filedate, urltitle, title, datesmll),
-    " " * 4 + '<p>' + summary + '</p>',
+    '    <h3><a href="{0}>{1}</a> - {2}</h3>'.format(url, title, datesmll),
+    "    <p>" + summary + "</p>",
     "</article>\n",
     '<br class="small">\n'
 ]
@@ -207,24 +270,56 @@ for line in lines:
     if "<!-- Recent Blogs Begin Here -->" in line:
         n = lines.index(line)
         for x in range(0, 4):
-            lines.insert(x+1, " " * 8 + newlines[x] + "\n")
+            lines.insert(x + 1, " " * 8 + newlines[x] + "\n")
     elif "<!-- Recent Blogs End Here -->" in line:
         n = lines.index(line)
-        for x in range(1, 8):
+        for x in range(1, 6):
             lines.pop(n-x)
-blogfile = open("blog", 'w')
+blogfile = open("../blog/index.html", "w")
 blogfile.truncate()
-for line in file_list:
+for line in lines:
     blogfile.write(line)
 blogfile.close()
 print("Updated the main blogs page")
 
 
-# TODO
-# ====
-# + Update the word cloud
-# + Update the RSS feeds
-# + Creat the blog file
+# The following code will update the catagory word cloud. The
+# design is inspired by that used by TagCrowd.com but isn't
+# disimilar to the ones commonly used on Wordpress. Note that
+# this code does not yet emulate the colouring aspect of the
+# word clouds as this requires a more sophisticated algorithm.
+# The unit used for font size is 'em'
 
-# Program is finished!
+smallsize = 1.0
+largesize = 5.0
+sizerange = largesize - smallsize
+countrange = max(catcount)-min(catcount)
+
+try:
+    ratio = sizerange/countrange
+    catsizes = [count * ratio for count in catcount]
+except:
+    ratio = 1
+
+string = "        <p>"
+for cat in catnames:
+    style = "font-size: " + catsizes[catnames.index(cat)] + "em;"
+    string += '<a href="{0}" style="{1}">'.format(cat, style)
+    string += cat + "</a> "
+
+with open("../blog/cat/index.html", "r") as file:
+    lines = [line for line in file]
+for line in lines:
+    if "<!-- Begining of tagcloud -->" in line:
+        index = lines.index(line) + 1
+lines.pop(index)
+lines.insert(index, string)
+cloudfile = open("../blog/cat/index.html", "w")
+cloudfile.truncate()
+for line in lines:
+    cloudfile.write(line)
+cloudfile.close()
+print("Updated the catagory wordcloud")
+
+
 print("Done!\n")

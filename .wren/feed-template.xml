@@ -4,7 +4,8 @@
         <title>Fogg Blog TEMPLATE</title>
         <link>http://fogg.me.uk/blog</link>
         <description>My latest blogs</description>
-
+        
+        <!-- List Begins Here -->
         <item>
             <title>BLOGTITLE</title>
             <link>BLOGURL</link>
