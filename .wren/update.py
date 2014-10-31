@@ -158,7 +158,7 @@ copy("blog-template.html", dest)
 sed("BLOGDATE", datesmll, dest)
 sed("BLOGTITLE", title, dest)
 sed("READINGTIME", readtime, dest)
-sed("BLOGCONTENT", HTMLcontent, dest)
+sed("BLOGCONTENT", "".join(HTMLcontent), dest)
 
 
 # When a new catagory is created it needs all the files
