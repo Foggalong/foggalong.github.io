@@ -99,11 +99,11 @@ summary = input("\nSummary:\n")
 # formats, not all provide by the datetime module.
 
 # YYYY-MM-DD
-datesmll = datetime.date(datetime.now())
+datesmll = str(datetime.date(datetime.now()))
 # YYYY/MM/DD
-filedate = sub(r"-", "/", str(datesmll))
+filedate = sub(r"-", "/", datesmll)
 # Day DD Mon YYYY HH:MM:SS
-datelong = datetime.ctime(datetime.now())
+datelong = str(datetime.ctime(datetime.now()))
 # Day, DD Mon YYYY HH:MM:SS TMZ
 datelong = ", ".join(datelong.split(" ", 1)) + " GMT"
 
