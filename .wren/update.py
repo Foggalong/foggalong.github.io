@@ -168,7 +168,7 @@ sed("BLOGCONTENT", "".join(HTMLcontent), dest)
 with open("catdat.csv", "r") as file:
     catdat = [line.strip() for line in file]
 catnames = [line.split(",")[0] for line in catdat]
-catcount = [line.split(",")[1] for line in catdat]
+catcount = [int(line.split(",")[1]) for line in catdat]
 
 catnames.pop(0)
 catcount.pop(0)
@@ -195,7 +195,7 @@ for cat in catagories:
 
 with open("catdat.csv", "w") as file:
     for x in range(0, len(catnames)-1):
-        file.write(catnames[x] + "," + catcount[x])
+        file.write(catnames[x] + "," + str(catcount[x]))
 
 
 # This inserts a single line of HTML which links to the new
