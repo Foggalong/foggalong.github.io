@@ -130,8 +130,8 @@ catagories = tmp
 print("\nGIVEN INFORMATION")
 print("Title:", title)
 print("URL:", url)
-print("Short date:", datesmll)
-print("Long date:", datelong)
+print("Time:", datelong)
+print("Reading time:", readtime)
 print("Catagories:", catagories)
 print("Summary:", summary, "\n")
 
@@ -143,7 +143,7 @@ while q == 0:
         pass
     elif ans == "n":
         gerror("meta data rejected")
-print("Meta data accepted")
+print("Meta data accepted\n")
 
 
 # Copies the blog data to the template file and then moves
@@ -182,7 +182,7 @@ for cat in newcat:
     sed("TEMPLATE", cat, "../blog/cat/" + cat + ".html")
     catnames.append(cat)
     catcount.append(0)
-    print("Created" + cat + "catagory")
+    print("Created", cat, "catagory")
 
 for cat in catagories:
     pos = catnames.index(cat)
@@ -198,7 +198,7 @@ with open("catdat.csv", "w") as file:
 # This inserts a single line of HTML which links to the new
 # blog into each of the catagory lists which it falls into.
 
-newline = '<li><a href="{0}">{1}     {2}</a></li>'
+newline = '<li><a href="{0}">{1} - {2}</a></li>'
 newline = newline.format(url, datesmll, title)
 
 for cat in (catagories + ["all"]):
@@ -215,6 +215,7 @@ for cat in (catagories + ["all"]):
     catfile.close()
     print("Added blog to", cat, "catagory list")
 
+# HANGS
 
 # Insters a the nessisary lines into the XML files so that
 # the new blog shows up in the RSS feeds it alls into. Note
@@ -240,7 +241,7 @@ for cat in (catagories + ["all"]):
         if "<!-- List Begins Here -->" in line:
             n = lines.index(line)
             for x in range(0, 6):
-                lines.insert(x + 1, " " * 8 + newlines[x] + "\n")
+                lines.insert(n + x + 1, " " * 8 + newlines[x] + "\n")
     catfeed = open("../blog/feed/" + cat + ".html", "w")
     catfeed.turncate()
     for line in lines:
