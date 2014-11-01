@@ -303,7 +303,7 @@ except:
 
 string = "        <p>"
 for cat in catnames:
-    style = "font-size: " + catsizes[catnames.index(cat)] + "em;"
+    style = "font-size: {0}em;".format(catsizes[catnames.index(cat)])
     string += '<a href="{0}" style="{1}">'.format(cat, style)
     string += cat + "</a> "
 
