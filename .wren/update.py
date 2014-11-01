@@ -270,7 +270,7 @@ for line in lines:
     if "<!-- Recent Blogs Begin Here -->" in line:
         n = lines.index(line)
         for x in range(0, 4):
-            lines.insert(x + 1, " " * 8 + newlines[x] + "\n")
+            lines.insert(n + x + 1, " " * 8 + newlines[x] + "\n")
     elif "<!-- Recent Blogs End Here -->" in line:
         n = lines.index(line)
         for x in range(1, 6):
@@ -312,8 +312,8 @@ with open("../blog/cat/index.html", "r") as file:
 for line in lines:
     if "<!-- Begining of tagcloud -->" in line:
         index = lines.index(line) + 1
-lines.pop(index)
-lines.insert(index, string)
+        lines.pop(index)
+        lines.insert(index, string)
 cloudfile = open("../blog/cat/index.html", "w")
 cloudfile.truncate()
 for line in lines:
