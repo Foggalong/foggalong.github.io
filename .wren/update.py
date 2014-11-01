@@ -215,9 +215,8 @@ for cat in (catagories + ["all"]):
     catfile.close()
     print("Added blog to", cat, "catagory list")
 
-# HANGS
 
-# Insters a the nessisary lines into the XML files so that
+# Inserts a the nessisary lines into the XML files so that
 # the new blog shows up in the RSS feeds it alls into. Note
 # that this process doesn't currently remove any blogs from
 # the RSS file. This is recommended as it prevents the file
@@ -242,7 +241,7 @@ for cat in (catagories + ["all"]):
             n = lines.index(line)
             for x in range(0, 7):
                 lines.insert(n + x + 1, " " * 8 + newlines[x] + "\n")
-    catfeed = open("../blog/feed/" + cat + ".html", "w")
+    catfeed = open("../blog/feed/" + cat + ".xml", "w")
     catfeed.truncate()
     for line in lines:
         catfeed.write(line)
