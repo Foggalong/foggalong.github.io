@@ -5,13 +5,6 @@
         <link>http://fogg.me.uk/blog</link>
         <description>My latest blogs</description>
         
-        <!-- List Begins Here -->
-        <item>
-            <title>BLOGTITLE</title>
-            <link>BLOGURL</link>
-            <guid>BLOGURL</guid>
-            <pubDate>DAY, DD MON YYYY HH:MM:SS GMT</pubDate>
-            <description>BLOGDESCRIPTION</description>
-        </item>        
+        <!-- List Begins Here --> 
     </channel>
 </rss>
