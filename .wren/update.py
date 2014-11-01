@@ -192,7 +192,7 @@ for cat in catagories:
 
 with open("catdat.csv", "w") as file:
     for x in range(0, len(catnames)-1):
-        file.write(catnames[x] + "," + str(catcount[x]))
+        file.write("{0},{1}\n".format(catnames[x],catcount[x]))
 
 
 # This inserts a single line of HTML which links to the new
