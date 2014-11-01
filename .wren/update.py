@@ -240,10 +240,10 @@ for cat in (catagories + ["all"]):
     for line in lines:
         if "<!-- List Begins Here -->" in line:
             n = lines.index(line)
-            for x in range(0, 6):
+            for x in range(0, 7):
                 lines.insert(n + x + 1, " " * 8 + newlines[x] + "\n")
     catfeed = open("../blog/feed/" + cat + ".html", "w")
-    catfeed.turncate()
+    catfeed.truncate()
     for line in lines:
         catfeed.write(line)
     catfeed.close()
