@@ -234,7 +234,7 @@ newlines = [
 ]
 
 for cat in (catagories + ["all"]):
-    with open("../blog/feed" + cat + ".xml", "r") as file:
+    with open("../blog/feed/" + cat + ".xml", "r") as file:
         lines = [line for line in file]
     for line in lines:
         if "<!-- List Begins Here -->" in line:
