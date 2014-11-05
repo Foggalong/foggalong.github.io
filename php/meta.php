@@ -1,5 +1,5 @@
 <meta name="description" content="Simple Personal Website"> 
-    <meta name="keywords" content="Blog, Programming"> 
+    <meta name="keywords" content="Blog"> 
     <meta name="author" content="Joshua Fogg"> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

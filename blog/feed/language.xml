@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>Joshua Fogg's blog posts</title>
-        <link>http://fogg.me.uk/blog/cat/blog</link>
-        <description>My latest blog posts</description>
+        <title>Joshua Fogg's language posts</title>
+        <link>http://fogg.me.uk/blog/cat/language</link>
+        <description>My latest language posts</description>
         
         <!-- List Begins Here --> 
         <item>

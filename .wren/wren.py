@@ -6,14 +6,20 @@
 
 from datetime import datetime
 from math import floor
-from os import getcwd, makedirs, path
+from os import getcwd, makedirs, path, walk
 from re import search, sub
 from shutil import copy
 from time import sleep
 
 
-# Thes function allows for timeout when the Wren
+# These functions allow for timeout when the Wren
 # updater is run via the "Run In Terminal" command
+
+def sucess(message):
+    print(message + "\n")
+    sleep(3)
+    exit(0)
+
 
 def gerror(message):
     print("ERROR: {0}".format(message))
@@ -27,20 +33,68 @@ def gerror(message):
 # I wanted to avoid relying on outside programs.
 
 def sed(find, replace, target):
-    with open(target, "r") as file:
+    with open(target, "r", encoding='utf-8') as file:
         lines = file.readlines()
-    with open(target, "w") as file:
+    with open(target, "w", encoding='utf-8') as file:
         for line in lines:
             file.write(sub(find, replace, line))
 
 
-# Checks running from the Wren directory so that
-# the relative locations of files can be known
+def supsed(find, replace):
+    for root, dirs, files in walk("../", topdown=False):
+        for name in files:
+            target = path.join(root, name)
+            if (".git" in target) or ("images" in target):
+                pass
+            else:
+                sed(find, replace, target)
+
+
+# Checks running from the .wren directory so that the
+# relative locations of files can be known.
 
 if ".wren" not in getcwd():
     gerror("please run from the .Wren directory")
-else:
-    print("Updating blog...")
+
+
+# If the Wren has not been run before the following code
+# will run. This sets up all the files with any variables
+# that are user modified. WARNING: that this code does not
+# currently check if the URL is correctly formatted, nor
+# does it check if it actually exists.
+
+if not path.isfile("catdat.csv"):
+    print("Setting up Wren...")
+
+    blogger = input("What is your full name? ")
+    supsed("Joshua Fogg", blogger)
+
+    blogurl = input("What is your website url? ")
+    supsed("fogg.me.uk", blogurl)
+
+    # Wren can integrate Disqus as a comments system if
+    # the user so wants. In future versions I'm going to
+    # have a look around for alternative systems.
+    q = 0
+    while q == 0:
+        ans = input("Do you wish to use Disqus for comments? (y/n) ")
+        if ans == "y":
+            print("If you don't have a Disqus account go to")
+            print("https://disqus.com/profile/signup/ now!")
+            shortname = input("What is your Disqus shortname? ")
+            sed("DSHORTNAME", shortname, "../php/comments.php")
+            q = 1
+            pass
+        elif ans == "n":
+            with open("../php/comments.php", "w+") as file:
+                file.write('<br class="small">\n')
+            q = 1
+            pass
+
+    with open("catdat.csv", "w+") as file:
+        file.write("Category,Count")
+
+    sucess("Setup complete!")
 
 
 # Extracts the blog body from the input file. It's fixed
@@ -81,16 +135,16 @@ text = " ".join(TXTcontent)
 
 if len(text)/200 < 1:
     secs = int(float(len(text))*0.3)
-    readtime = "~{0} seconds reading".format(secs)
+    readtime = "~{0} seconds".format(secs)
 else:
     mins = int(floor(len(text)/float(200)))
     secs = int(((len(text)/float(200))-mins)*60)
-    readtime = "~{0} minutes {1} seconds reading".format(mins, secs)
+    readtime = "~{0} minutes {1} seconds".format(mins, secs)
 
 
 print("Please enter the following data as prompted")
 title = input("\nTitle:\n")
-catagories = input("\nCatagories:\n").split(" ")
+categories = input("\nCategories:\n").split(" ")
 summary = input("\nSummary:\n")
 
 
@@ -120,11 +174,11 @@ urltitle = clean(title)
 url = "http://fogg.me.uk/blog/" + filedate + "/" + urltitle
 
 tmp = []
-for item in catagories:
+for item in categories:
     item = clean(item)
-    if len(item) != 0:
+    if len(item) != 0 and item not in tmp:
         tmp.append(item)
-catagories = tmp
+categories = tmp
 
 
 print("\nGIVEN INFORMATION")
@@ -132,7 +186,7 @@ print("Title:", title)
 print("URL:", url)
 print("Time:", datelong)
 print("Reading time:", readtime)
-print("Catagories:", catagories)
+print("Categories:", categories)
 print("Summary:", summary, "\n")
 
 q = 0
@@ -160,7 +214,7 @@ sed("READINGTIME", readtime, dest)
 sed("BLOGCONTENT", "".join(HTMLcontent), dest)
 
 
-# When a new catagory is created it needs all the files
+# When a new category is created it needs all the files
 # associated with it creating too, along with the existing
 # files that need to refrence it updating.
 
@@ -171,7 +225,7 @@ catnames = [line.split(",")[0] for line in catdat]
 catcount = [int(line.split(",")[1]) for line in catdat]
 
 newcat = []
-for item in catagories:
+for item in categories:
     if item not in catnames:
         newcat.append(item)
 
@@ -182,38 +236,42 @@ for cat in newcat:
     sed("TEMPLATE", cat, "../blog/cat/" + cat + ".html")
     catnames.append(cat)
     catcount.append(0)
-    print("Created", cat, "catagory")
+    print("Created", cat, "category")
 
-for cat in catagories:
+for cat in categories:
     pos = catnames.index(cat)
-    count = catcount[pos] + 1
+    newcount = catcount[pos] + 1
     catcount.pop(pos)
-    catcount.insert(pos, count)
+    catcount.insert(pos, newcount)
+
+combined = sorted(list(zip(catnames, catcount)))
+catnames = [name for (name, count) in combined]
+catcount = [count for (name, count) in combined]
 
 with open("catdat.csv", "w") as file:
-    for x in range(0, len(catnames)-1):
-        file.write("{0},{1}\n".format(catnames[x],catcount[x]))
+    file.write("Category,Count\n")
+    for x in range(0, len(catnames)):
+        file.write("{0},{1}\n".format(catnames[x], catcount[x]))
 
 
 # This inserts a single line of HTML which links to the new
-# blog into each of the catagory lists which it falls into.
+# blog into each of the category lists which it falls into.
 
-newline = '<li><a href="{0}">{1} - {2}</a></li>'
+newline = '<li><a href="{0}">{1} : {2}</a></li>'
 newline = newline.format(url, datesmll, title)
 
-for cat in (catagories + ["all"]):
+for cat in (categories + ["all"]):
     with open("../blog/cat/" + cat + ".html", "r") as file:
         lines = [line for line in file]
     for line in lines:
         if "<!-- List Begins Here -->" in line:
             n = lines.index(line)
             lines.insert(n + 1, ' ' * 12 + newline + "\n")
-    catfile = open("../blog/cat/" + cat + ".html", "w")
-    catfile.truncate()
+    catfile = open("../blog/cat/" + cat + ".html", "w+")
     for line in lines:
         catfile.write(line)
     catfile.close()
-    print("Added blog to", cat, "catagory list")
+    print("Added blog to", cat, "category list")
 
 
 # Inserts a the nessisary lines into the XML files so that
@@ -233,16 +291,24 @@ newlines = [
     "</item>\n"
 ]
 
-for cat in (catagories + ["all"]):
+for cat in (categories + ["all"]):
     with open("../blog/feed/" + cat + ".xml", "r") as file:
-        lines = [line for line in file]
+        lines, items, record = [], 0, True
+        for line in file:
+            if "<item>" in line:
+                items += 1
+            if "<!-- List Ends Here -->" in line:
+                record, items = True, 0
+            if items > 24:
+                record = False
+            if record is True:
+                lines.append(line)
     for line in lines:
         if "<!-- List Begins Here -->" in line:
             n = lines.index(line)
-            for x in range(0, 7):
+            for x in range(0, len(newlines)):
                 lines.insert(n + x + 1, " " * 8 + newlines[x] + "\n")
-    catfeed = open("../blog/feed/" + cat + ".xml", "w")
-    catfeed.truncate()
+    catfeed = open("../blog/feed/" + cat + ".xml", "w+")
     for line in lines:
         catfeed.write(line)
     catfeed.close()
@@ -257,32 +323,38 @@ for cat in (catagories + ["all"]):
 
 newlines = [
     "<article>",
-    '    <h3><a href="{0}>{1}</a> - {2}</h3>'.format(url, title, datesmll),
+    '    <h4>  <div style="float: right;">' + datesmll + '</div></h4>',
+    '    <h3><a href="{0}">{1}</a></h3>'.format(url, title),
     "    <p>" + summary + "</p>",
     "</article>\n",
     '<br class="small">\n'
 ]
 
 with open("../blog/index.html", 'r') as file:
-    lines = [line for line in file]
+    lines, recent, record = [], 0, True
+    for line in file:
+        if '<br class="small">' in line:
+            recent += 1
+        if '<!-- Recent Blogs End Here -->' in line:
+            record, recent = True, 0
+        if recent > 4:
+            record = False
+        if record is True:
+            lines.append(line)
+
 for line in lines:
     if "<!-- Recent Blogs Begin Here -->" in line:
         n = lines.index(line)
-        for x in range(0, 4):
+        for x in range(0, len(newlines)):
             lines.insert(n + x + 1, " " * 8 + newlines[x] + "\n")
-    elif "<!-- Recent Blogs End Here -->" in line:
-        n = lines.index(line)
-        for x in range(1, 6):
-            lines.pop(n-x)
-blogfile = open("../blog/index.html", "w")
-blogfile.truncate()
+blogfile = open("../blog/index.html", "w+")
 for line in lines:
     blogfile.write(line)
 blogfile.close()
 print("Updated the main blogs page")
 
 
-# The following code will update the catagory word cloud. The
+# The following code will update the category word cloud. The
 # design is inspired by that used by TagCrowd.com but isn't
 # disimilar to the ones commonly used on Wordpress. Note that
 # this code does not yet emulate the colouring aspect of the
@@ -292,19 +364,24 @@ print("Updated the main blogs page")
 smallsize = 1.0
 largesize = 5.0
 sizerange = largesize - smallsize
-countrange = max(catcount)-min(catcount)
 
 try:
+    countrange = max(catcount)-min(catcount)
     ratio = sizerange/countrange
-    catsizes = [count * ratio for count in catcount]
 except:
     ratio = 1
+
+catsizes = []
+for count in catcount:
+    size = smallsize + (count - 1) * ratio
+    catsizes.append("{0:.2f}".format(size))
 
 string = "        <p>"
 for cat in catnames:
     style = "font-size: {0}em;".format(catsizes[catnames.index(cat)])
     string += '<a href="{0}" style="{1}">'.format(cat, style)
     string += cat + "</a> "
+string += "</p>\n"
 
 with open("../blog/cat/index.html", "r") as file:
     lines = [line for line in file]
@@ -313,12 +390,11 @@ for line in lines:
         index = lines.index(line) + 1
         lines.pop(index)
         lines.insert(index, string)
-cloudfile = open("../blog/cat/index.html", "w")
-cloudfile.truncate()
+cloudfile = open("../blog/cat/index.html", "w+")
 for line in lines:
     cloudfile.write(line)
 cloudfile.close()
-print("Updated the catagory wordcloud")
+print("Updated the category wordcloud")
 
 
-print("Done!\n")
+sucess("Done!")

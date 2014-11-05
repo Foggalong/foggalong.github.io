@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>Joshua Fogg's privacy posts</title>
-        <link>http://fogg.me.uk/blog/cat/privacy</link>
-        <description>My latest privacy posts</description>
+        <title>Joshua Fogg's review posts</title>
+        <link>http://fogg.me.uk/blog/cat/review</link>
+        <description>My latest review posts</description>
         
         <!-- List Begins Here --> 
+        <item>
+            <title>The Hitchhiker's Guide to the Galaxy</title>
+            <link>http://fogg.me.uk/blog/2014/03/08/thehitchhikersguidetothegalaxy</link>
+            <guid>http://fogg.me.uk/blog/2014/03/08/thehitchhikersguidetothegalaxy</guid>
+            <pubDate>Wed, Nov  5 20:13:04 2014 GMT</pubDate>
+            <description>My review of the first book in the famous sci-fi series by Douglas Adams.</description>
+        </item>
+
         <item>
             <title>Facebook mobile - Privacy & Tinfoil</title>
             <link>http://fogg.me.uk/blog/2014/01/27/facebookmobileprivacytinfoil</link>
