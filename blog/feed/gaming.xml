@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Joshua Fogg's gaming posts</title>
+        <link>http://fogg.me.uk/blog/cat/gaming</link>
+        <description>My latest gaming posts</description>
+        
+        <!-- List Begins Here --> 
+        <item>
+            <title>Assassin's Creed</title>
+            <link>http://fogg.me.uk/blog/2014/11/23/assassinscreed</link>
+            <guid>http://fogg.me.uk/blog/2014/11/23/assassinscreed</guid>
+            <pubDate>Sun, Nov 23 20:00:48 2014 GMT</pubDate>
+            <description>I review Assassin's Creed</description>
+        </item>
+
+    </channel>
+</rss>
