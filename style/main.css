@@ -154,7 +154,7 @@ a.foot:link, a.foot:visited {
 }
 
 div.icons {
-    width: 586px;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     height: auto;
