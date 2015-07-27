@@ -6,3 +6,4 @@
     <link rel="stylesheet" type="text/css" href="http://fogg.me.uk/style/main.css">
     <link rel="icon" href="http://fogg.me.uk/images/icons/flav.ico">
     <link rel="shortcut icon" href="http://fogg.me.uk/images/icons/flav.ico">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans">
