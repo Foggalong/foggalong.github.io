@@ -67,10 +67,10 @@ if not path.isfile("catdat.csv"):
     print("Setting up Wren...")
 
     blogger = input("What is your full name? ")
-    supsed("BLOGGER", blogger)
+    supsed("Joshua Fogg", blogger)
 
     blogurl = input("What is your website url? ")
-    supsed("BLOGURL", blogurl)
+    supsed("fogg.me.uk", blogurl)
 
     # Wren can integrate Disqus as a comments system if
     # the user so wants. In future versions I'm going to
@@ -126,7 +126,7 @@ for line in HTMLcontent:
         elif record is True:
             raw += i
     TXTcontent.append(raw.strip())
-text = " ".join(TXTcontent).split(" ")
+text = " ".join(TXTcontent)
 
 
 # This calculates the approximate reading time for the blog.
@@ -171,7 +171,7 @@ def clean(string):
     return "".join(tmp)
 
 urltitle = clean(title)
-url = "http://BLOGURL/blog/" + filedate + "/" + urltitle
+url = "http://fogg.me.uk/blog/" + filedate + "/" + urltitle
 
 tmp = []
 for item in categories:
