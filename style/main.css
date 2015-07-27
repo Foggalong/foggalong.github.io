@@ -153,22 +153,15 @@ a.foot:link, a.foot:visited {
     padding-right: 15px;
 }
 
-
-table.c {
+div.icons {
+    width: 586px;
     margin-left: auto;
     margin-right: auto;
+    height: auto;
+    overflow: hidden;
 }
 
-th {
-    color: #000033;
-}
-
-th.c {
-    color: #000033;
-    text-align: center;
-}
-
-td.c {
-    color: #000033;
-    text-align: center;
+div.icons img {
+    display: inline;
+    margin: 0 10px;
 }
