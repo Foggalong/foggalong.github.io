@@ -1,0 +1,38 @@
+[
+	{
+		"city" : "sheffield",
+		"ghuser" : "Foggalong"
+	},
+	{
+		"city" : "The Balkans",
+		"ghuser" : "me4oslav"
+	}
+	,
+	{
+		"city" : "Mainz",
+		"ghuser" : "cldx"
+	}
+	,
+	{
+		"city" : "banglore",
+		"ghuser" : "satya164"
+	}
+	,
+	{
+		"city" : "hyderabad",
+		"ghuser" : "alienblogger",
+		"name"	: "sid"
+	}
+	,
+	{
+		"city" : "varanasi",
+		"ghuser" : "AnuragKumar99",
+		"name"	: "anurag"
+	}
+	,
+	{
+		"city" : "allahabad",
+		"ghuser" : "ahhmarr"
+	}
+	
+]
