@@ -11,14 +11,19 @@ table {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    border-radius: 12px; /* unsure of how this looks */
-}
-
-table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
 
 th, td {
   padding: 5px;
+}
+
+a:link {
+    color: #6699CC;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #660099;
 }
