@@ -19,7 +19,12 @@ th, td {
   padding: 10px;
 }
 
-a:link a:visited {
+a:link {
+    color: #2d2d2d;
+    text-decoration: none;
+}
+
+a:visited {
     color: #2d2d2d;
     text-decoration: none;
 }
