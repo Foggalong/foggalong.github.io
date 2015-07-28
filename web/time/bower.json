@@ -1,0 +1,7 @@
+{
+  "name": "numix contributors time zones",
+  "dependencies": {
+    "moment": "~2.10.6",
+    "jquery": "~2.1.4"
+  }
+}
