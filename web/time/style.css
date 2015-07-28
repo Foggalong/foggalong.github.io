@@ -4,19 +4,19 @@ body {
     font-style: normal;
     background: #F2F2F2;
     margin: 50px 30px 10px 30px;
+    text-align: centre;
 }
 
 table {
-    text-align: centre;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    border: 1px solid black;
+    border: 0px
     border-collapse: collapse;
 }
 
 th, td {
-  padding: 5px;
+  padding: 10px;
 }
 
 a:link {
