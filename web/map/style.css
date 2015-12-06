@@ -1,0 +1,29 @@
+body {
+    color: #2d2d2d;
+    font-family: "Fira Sans";
+    font-style: normal;
+    background: #F2F2F2;
+    margin: 50px 30px 10px 30px;
+    text-align: center;
+}
+
+/*ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+}*/
+
+ul {
+    text-align: justify;
+    min-width: 500px;
+}
+
+ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+ul.li {
+    display: inline-block;
+}
