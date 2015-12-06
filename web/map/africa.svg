@@ -48,8 +48,8 @@
 	}
  </style>
 
-<script type="text/ecmascript">
-<![CDATA[
+ <script type="text/ecmascript">
+ <![CDATA[
 
     var data1 = [['ghana', 'togo'],
                  ['burkina-faso', 'cameroon', 'chad', 'eq-guinea'],
