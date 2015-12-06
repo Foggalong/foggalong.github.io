@@ -37,7 +37,9 @@
 	}
 
 	.label{
+        font-family: "Arial";
         font-size: 14px;
+        color: #353535;
 	}
 
 	path:hover
@@ -284,11 +286,11 @@
     <rect x="10" y="325" width="20" height="20" class="key colour3"/>
     <rect x="10" y="350" width="20" height="20" class="key colour4"/>
 
-    <text x="35" y="265">0</text>
-    <text x="35" y="290">1 to 10</text>
-    <text x="35" y="315">11 to 100</text>
-    <text x="35" y="340">101 to 1000</text>
-    <text x="35" y="365">1001+</text>
+    <text x="35" y="265">N/A</text>
+    <text x="35" y="290">Traversed</text>
+    <text x="35" y="315">Visited</text>
+    <text x="35" y="340">Stayed</text>
+    <text x="35" y="365">Lived</text>
  </g>
 
 </svg>
