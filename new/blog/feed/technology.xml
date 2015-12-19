@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Joshua Fogg's technology posts</title>
+        <link>http://fogg.me.uk/blog/cat/technology</link>
+        <description>My latest technology posts</description>
+        
+        <!-- List Begins Here --> 
+        <item>
+            <title>Facebook mobile - Privacy &amp; Tinfoil</title>
+            <link>http://fogg.me.uk/blog/2014/01/27/facebookmobileprivacytinfoil</link>
+            <guid>http://fogg.me.uk/blog/2014/01/27/facebookmobileprivacytinfoil</guid>
+            <pubDate>Mon, Jan  27 19:55:01 2014 GMT</pubDate>
+            <description>With Facebook mobile's recent change in privacy policy I review what I see as the best alternative app.</description>
+        </item>
+
+    </channel>
+</rss>

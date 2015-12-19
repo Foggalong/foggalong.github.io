@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Joshua Fogg's education posts</title>
+        <link>http://fogg.me.uk/blog/cat/education</link>
+        <description>My latest education posts</description>
+        
+        <!-- List Begins Here --> 
+        <item>
+            <title>Global Education</title>
+            <link>http://fogg.me.uk/blog/2014/06/09/globaleducation</link>
+            <guid>http://fogg.me.uk/blog/2014/06/09/globaleducation</guid>
+            <pubDate>Mon, Jun  9 20:23:19 2014 GMT</pubDate>
+            <description>How can our education better prepare us to compete in an increasingly globalised world?</description>
+        </item>
+
+    </channel>
+</rss>

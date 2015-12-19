@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Joshua Fogg's blog</title>
+        <link>http://fogg.me.uk/blog</link>
+        <description>My latest blogs</description>
+
+        <!-- List Begins Here -->
+        <item>
+            <title>Assassin's Creed</title>
+            <link>http://fogg.me.uk/blog/2014/11/23/assassinscreed</link>
+            <guid>http://fogg.me.uk/blog/2014/11/23/assassinscreed</guid>
+            <pubDate>Sun, Nov 23 20:00:48 2014 GMT</pubDate>
+            <description>I review Assassin's Creed</description>
+        </item>
+
+        <item>
+            <title>Global Education</title>
+            <link>http://fogg.me.uk/blog/2014/06/09/globaleducation</link>
+            <guid>http://fogg.me.uk/blog/2014/06/09/globaleducation</guid>
+            <pubDate>Mon, Jun  9 20:23:19 2014 GMT</pubDate>
+            <description>How can our education better prepare us to compete in an increasingly globalised world?</description>
+        </item>
+
+        <item>
+            <title>The Hitchhiker's Guide to the Galaxy</title>
+            <link>http://fogg.me.uk/blog/2014/03/08/thehitchhikersguidetothegalaxy</link>
+            <guid>http://fogg.me.uk/blog/2014/03/08/thehitchhikersguidetothegalaxy</guid>
+            <pubDate>Sat, Mar  8 20:13:04 2014 GMT</pubDate>
+            <description>My review of the first book in the famous sci-fi series by Douglas Adams.</description>
+        </item>
+
+        <item>
+            <title>Facebook mobile - Privacy &amp; Tinfoil</title>
+            <link>http://fogg.me.uk/blog/2014/01/27/facebookmobileprivacytinfoil</link>
+            <guid>http://fogg.me.uk/blog/2014/01/27/facebookmobileprivacytinfoil</guid>
+            <pubDate>Mon, Jan  27 19:55:01 2014 GMT</pubDate>
+            <description>With Facebook mobile's recent change in privacy policy I review what I see as the best alternative app.</description>
+        </item>
+
+        <!-- List Ends Here -->
+    </channel>
+</rss>
