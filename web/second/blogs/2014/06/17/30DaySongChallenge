@@ -3,24 +3,24 @@
 
 <head>
 	<title>Joshua Fogg | fogg.me.uk</title>
-	<meta name="description" content="Simple Personal Website"> 
-	<meta name="keywords" content="Blog, Programming"> 
-	<meta name="author" content="Joshua Fogg"> 
-	<meta charset="UTF-8"> 
+	<meta name="description" content="Simple Personal Website">
+	<meta name="keywords" content="Blog, Programming">
+	<meta name="author" content="Joshua Fogg">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="http://fogg.me.uk/style/main.css">
-	<link rel="icon" href="http://fogg.me.uk/images/icons/friends.ico">
-	<link rel="shortcut icon" href="http://fogg.me.uk/images/icons/friends.ico">
+	<link rel="stylesheet" type="text/css" href="../../../../style/main.css">
+	<link rel="icon" href="../../../../images/icons/friends.ico">
+	<link rel="shortcut icon" href="../../../../images/icons/friends.ico">
 </head>
 
 <body>
 
 <div style="width: 512px; margin-left: auto; margin-right: auto;">
 	<ul class="nav">
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/">Home</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/blog">Blog</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/work">Work</a></li>
-		<li class="nav"><a class="nav" href="http://fogg.me.uk/about">About</a></li>
+		<li class="nav"><a class="nav" href="../../../../index">Home</a></li>
+		<li class="nav"><a class="nav" href="../../../../blog">Blog</a></li>
+		<li class="nav"><a class="nav" href="../../../../work">Work</a></li>
+		<li class="nav"><a class="nav" href="../../../../about">About</a></li>
 	</ul>
 </div>
 
@@ -139,12 +139,12 @@
 			<p><a href="http://www.youtube.com/watch?v=w8KQmps-Sog">Uprising – Muse</a><br>
 			<em>Then:</em> Really gets me going this one does. I’ll learn that bass line one day.<br>
 			<em>Now:</em> I should buy a bass.</p><br>
- 
+
 			<h3>Day 21 - a song that you listen to when you’re happy</h3>
 			<p><a href="http://www.youtube.com/watch?v=tbfs5w8lSBo">I Can’t Decide – Scissor Sisters</a><br>
 			<em>Then:</em> Just brilliant! Gives me a feeling of being in control like no other, and make me feel like I can do anything! :D<br>
 			<em>Now:</em> I'd forgotten about this song. So much dancing.</p><br>
- 
+
 			<h3>Day 22 - a song that you listen to when you’re sad</h3>
 			<p><a href="http://www.youtube.com/watch?v=AWiccrTB4LM">Love Today – MIKA</a><br>
 			<em>Then:</em> Or any MIKA song to be fair. Puts me in a good mood afterwards you see.<br>
@@ -201,7 +201,7 @@
 		<div id="disqus_thread">
 			<script type="text/javascript">
 				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-				var disqus_shortname = 'foggalong'; // required: replace example with your forum shortname		
+				var disqus_shortname = 'foggalong'; // required: replace example with your forum shortname
 
 				/* * * DON'T EDIT BELOW THIS LINE * * */
 				(function() {
