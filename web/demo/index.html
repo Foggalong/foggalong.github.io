@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>techtree.js | demo tech tree</title>
+
+        <!-- tree default css theme -->
+        <link href="/techtree-default.css" rel="stylesheet" type="text/css" />
+
+        <!-- custom css on top of the default css -->
+        <link href="/demo/tree_style.css" rel="stylesheet" type="text/css" />
+
+
+
+        <!-- jquery required -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type='text/javascript'></script>
+
+        <!-- loads tech tree into "tech-tree" div once ready -->
+        <script>
+            $.getScript( "http://d3js.org/d3.v3.min.js", function( data, textStatus, jqxhr ) {
+                $.getScript("/demo/tree_config.js", function(data, textStatus, jqxhr){
+                    $.getScript("/techtree.js", function(data, textStatus, jqxhr){
+                        techtree.drawTree();
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id='configuration explorer'>
+        
+            <link href="/demo/radioButtons.css" rel="stylesheet" type="text/css" />
+            
+            <script>
+                var redraw = function() {d3.select("svg").remove(); techtree.drawTree()};
+            </script>
+
+            <h3>treeConfig options: </h3>
+            <!-- TODO: check the appropriate boxes based on default treeConfig options like below: -->
+            <!-- <input type="radio" id="xbutton" name="closeTooltip" value="x-button" checked> -->
+            
+            <table>
+                <tr>
+                    <td>
+                        closeTooltip:
+                        <input type="radio" id="xbutton" name="closeTooltip" value="x-button" onclick='treeConfig.closeTooltip="x-button"; redraw()'>
+                           <label for="xbutton">x-button</label>
+                        <input type="radio" id="onMouseOut" name="closeTooltip"value="onmouseout" onclick='treeConfig.closeTooltip="onmouseout"; redraw()'>
+                           <label for="onMouseOut">onmouseout</label>
+                    </td>
+                    <td>
+                        openTooltip:
+                        <input type="radio" id="onclick" name="openTooltip" value="onclick" onclick='treeConfig.openTooltip="onclick"; redraw()'>
+                           <label for="onclick">onclick</label>
+                        <input type="radio" id='onmouseover' name='openTooltip' value='onmouseover' onclick='treeConfig.openTooltip="onmouseover"; redraw()'>
+                           <label for="onmouseover">onmoouseover</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            showNodeNames:
+                         <input type="radio" id="showNodeNames_true" name="showNodeNames" onclick='treeConfig.showNodeNames=true; redraw()'>
+                           <label for="showNodeNames_true">true</label>
+                         <input type="radio" id="showNodeNames_false" name="showNodeNames" onclick='treeConfig.showNodeNames=false; redraw()'>
+                           <label for="showNodeNames_false">false</label>
+                    </td>
+                    <td>
+                        showImages:
+                     <input type="radio" id="showImages_true" name="showImages" onclick='treeConfig.showImages=true; redraw()'>
+                       <label for="showImages_true">true</label>
+                     <input type="radio" id="showImages_false" name="showImages" onclick='treeConfig.showImages=false; redraw()'>
+                       <label for="showImages_false">false</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        futureTechFog:
+                     <input type="radio" id="fog_none" name="fog" onclick='treeConfig.futureTechFog="none"; redraw()'>
+                       <label for="fog_none">none</label>
+                     <input type="radio" id="fog_aesthetic" name="fog" onclick='treeConfig.futureTechFog="aesthetic"; redraw()'>
+                       <label for="fog_aesthetic">aesthetic</label>
+                    <td>
+                </tr>
+            </table>
+        </div>
+        <div id='techTreeDiv'>
+            <h3>resulting tech tree: </h3>
+            <div id='tech-tree'> </div>
+        </div>
+    </body>
+</html>
