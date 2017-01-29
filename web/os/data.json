@@ -1,0 +1,46 @@
+{
+    "School": {
+        "1": {
+            "start":    "2000-01-01",
+            "end":      "2000-08-31",
+            "XP": {
+                "col": "win",
+                "hov": "When I started, Intake used Windows 95."
+            }
+        },
+        "2": {
+            "start":    "2000-09-01",
+            "end":      "2003-08-31",
+            "98": {
+                "col": "win",
+                "hov": "Upgrade to Windows 98"
+            }
+        },
+        "3": {
+            "start":    "2003-09-01",
+            "end":      "2006-08-31",
+            "XP": {
+                "col": "win",
+                "hov": "Upgrade to Windows XP"
+            }
+        },
+        "4": {
+            "start":    "2006-09-01",
+            "end":      "2007-08-31",
+            "XP": {
+                "col": "win",
+                "hov": "City also had XP"
+            }
+        }
+    },
+    "Home 1": {
+        "1": {
+            "start":    "2004-01-01",
+            "end":      "2008-12-31",
+            "XP": {
+                "col": "win",
+                "hov": "First home computer!"
+            }
+        }
+    }
+}
