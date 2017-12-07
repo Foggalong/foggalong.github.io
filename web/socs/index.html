@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<style>
+	ul.events {
+    	list-style-type: none;
+    	margin: 0;
+    	padding: 60px 0 0 0;
+	}
+
+	ul.events li {
+    	-webkit-border-radius: 11px;
+    	-moz-border-radius: 11px;
+    	border-radius: 11px;
+    	background: #eee;
+    	border: 1px solid #ddd;
+    	color: #707070;
+        font-family: sans;
+    	font-size: 1.2em;
+    	font-weight: bold;
+    	margin-bottom: 6px;
+    	padding: 3px 0;
+    	position: relative;
+    	text-align: center;
+    	% height: 50px;
+	}
+
+	ul.events li em {
+    	color: #aaa;
+    	font-weight: normal;
+    	font-size: 0.9em;
+	}
+
+	ul.intervals {
+    	list-style-type: none;
+    	padding: 0;
+    	width; 150px;
+    	display: block;
+	}
+
+	/* The width depends on the number of intervals. For example 100 / 7 = 16.6% -- then subtract a little bit for room for the borders */
+	ul.intervals li {
+    	border-right: 1px solid #ccc;
+    	color: #999;
+    	float: left;
+        font-family: sans;
+    	font-size: 1.2em;
+    	margin: 0;
+    	padding: 15px 0;
+    	text-align: center;
+    	width: 16.4%;
+	}
+
+	ul.intervals li.first {
+    	border-left: 1px solid #ccc;
+	}
+</style>
+
+<html>
+<p style="font-family: sans;">These are societies to which I've had an active membership (i.e. attend the majority of events) shown for the range over which I had an active membership. There are other societies which I'm part of passively or only semi-actively such as discussion groups or have only attended a couple of events for (e.g. MAS, Chess Club, MLS, etc).</p>
+<br>
+<div class="timeline">
+    <ul class="intervals">
+        <li class="first">2013</li>
+        <li>2014</li>
+        <li>2015</li>
+        <li>2016</li>
+        <li>2017</li>
+        <li class="last">2018</li>
+    </ul>
+
+    <ul class="events">
+        <li title="Member: Sep '13;- Apr '14" style="width: 11%; left: 11%;">WARPED</li>
+        <li title="Member: Sep '13 - Apr '14" style="width: 11%; left: 11%;">Board Games</li>
+        <li title="Member: Sep '13 - Nov '16" style="width: 50%; left: 11%;">Video Games</li>
+        <li title="Member: Sep '15 - Present" style="width: 54%; left: 44%;">Galois Group</li>
+        <li title="Member: Oct '15 - Apr '16" style="width: 21%; left: 46%;">Creative Writing</li>
+        <li title="Member: Oct '15 - Present &#013;Orch. Librarian*: Feb '16 - Sep '16 &#013;Treasurer: Apr '16 - Apr '17 &#013;Secretary: Apr '17 - Apr '18 &#013;Webmaster*: Apr '17 - Nov '17" style="width: 52%; left: 46%;">CAOS</li>
+        <li title="Member: Oct '15 - Present &#013;Treasurer: Nov '17 - Apr '18 &#013;Publicity: Nov 17 - Apr '18" style="width: 52%; left: 46%;">Barbershop</li>
+        <li title="Member: Feb '16 - Present &#013;Games Coord.: Apr '16 - Apr '17 &#013;Secretary*: Jan '17 - Apr '17 &#013;President: Apr '17 - Apr '18" style="width: 47%; left: 51%;">Quidditch</li>
+        <li title="Member: Feb '16 - Present &#013;Rota: Apr '16 - Apr '17 &#013;HoC: Nov '16 - Apr '17 &#013;eListening*: Mar '17 - Apr '17 &#013;Coord: Apr '17 - Apr '18 &#013;Publicity*: Nov '17"  style="width: 47%; left: 51%;">Volunteering</li>
+    </ul> <!-- end .events -->
+    
+    <ul class="intervals">
+        <li class="first">2013</li>
+        <li>2014</li>
+        <li>2015</li>
+        <li>2016</li>
+        <li>2017</li>
+        <li class="last">2018</li>
+    </ul> <!-- end .intervals -->
+</div> <!-- end .timeline -->
+<br><br><br>
+<p style="font-family: sans;">* - position was interim vacancies</p>
+</html>
