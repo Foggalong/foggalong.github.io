@@ -58,6 +58,7 @@ a {
     color: #fff;
     text-align: center;
     background-color: #684099;
+    background-position: center;
     background-size: cover;
     background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../images/header.png"); }
 
