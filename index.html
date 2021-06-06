@@ -2,24 +2,85 @@
 <html>
 
 <head>
-	<title>foggalong.github.io</title>
-	<meta name="description" content="Simple Personal Website">
-	<meta name="keywords" content="Web Testing">
-	<meta name="author" content="Joshua Fogg">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="http://fogg.me.uk/images/icons/friends.ico">
-	<link rel="shortcut icon" href="http://fogg.me.uk/images/icons/friends.ico">
+    <title>Web Work</title>
+    <meta name="description" content="Hosting ground for past and future web projects.">
+    <meta name="keywords" content="Web Projects">
+    <meta name="author" content="Josh Fogg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://github.com/fluidicon.png">
+    <link rel="shortcut icon" href="https://github.com/fluidicon.png">
+    <link rel="apple-touch-icon-precomposed" href="path/to/favicon-180.png">
 </head>
 
+<style>
+    body {
+    	background: #9b9da3;
+        color: #3d3d3d;
+        font-family: helvetica, arial, sans-sherif;
+        font-size:15px;
+        padding: 4% 0 4% 0;
+    }
+
+    h2 { padding-top: 10px; }
+    h3 { padding-top:  8px; }
+
+    a { font-weight:bold; text-decoration: none; }
+    a:link { color: #4b5574; }
+    a:visited {	color: #4b5574; }
+
+    div.outer-main {
+    	background-color: #f9f9f9;
+    	border-radius: 20px;
+        width: 90%;
+        max-width: 800px;
+    	margin: auto;
+    }
+    
+    div.inner-main {
+        padding: 6% 8% 4% 8%;
+    	max-width: 780px;
+    	margin: auto;
+    }
+</style>
+
 <body>
-    <p>Here's a comprehensive list of the websites I've made - the good, the bad, and the ugly.</p>
-    <ul>
-        <li><a href="web/dp/index.html">Democracy Project</a> : June - July 2014</li>
-        <li><a href="web/first/index.html">First version of my website</a> : January - March 2014</li>
-        <li><a href="web/second/index.html">Second version of my website</a> : March - October 2014</li>
-				<li><a href="web/third/index.html">Third version of my website</a> : October 2014 - December 2015</li>
-        <li><a href="web/time/index.html">Timezone Tracker</a> : July 2015 - present</li>
-        <li><a href="web/map/index.html">Where I've Been</a> : December 2015 - present</li>
-    </ul>
+<div class="outer-main">
+	<div class="inner-main">
+		<h1>Web Work</h1>
+        <p>This website hosts a collection of web projects I've worked on; the good, the bad, and the ugly.</p>
+
+        <h2>Ongoing</h2>
+        <p>These are projects I still tinker with, they may be spun off into separate repos later.</p>
+
+        <h3><a href="web/map/index.html">Where I've Been</a></h3>
+        <p>Map which uses SVG-CSS integration to show labels on hover. It pulls precisely zero clever tricks to achieve this effect, all done with explicit labelling. Would like to make it smarter in future.</p>
+
+        <h3><a href="web/os/index.html">OS Timeline</a></h3>
+        <p>An in-progress idea to create timelines from JSON files to be rendered as HTML. There are some existing packages which can do this but most are premium and/or not open source.</p>
+
+        <h3><a href="web/socs/index.html">Society Timeline</a></h3>
+        <p>Another website timeline project, this one being used for my undergrad uni society membership. The stylesheet for this one was much nicer but I never got around to making a generator.</p>
+
+        <h2>Archive</h2>
+        <p>These are projects are here for posterity and won't be updated.</p>
+
+        <h3><a href="web/dp/index.html">Democracy Project</a></h3>
+        <p>Back in summer 2014 I had an idea to have an icon theme whereby all changes were voted on. There was some initial interest but it quickly fizzled out.</p>
+
+        <h3><a href="web/time/index.html">Timezone Tracker</a></h3>
+        <p>Back when <a href="numixproject.github.io">Numix</a> was a big team which worked (on occasion) synchronously, we used this page to keep track of what time it was where everyone was. It simply uses <a href="www.timeanddate.com">timeanddate.com</a> iframes.</p>
+
+        <h3><a href="web/first/index.html">First Website</a></h3>
+        <p>Used from January to March 2014, the first website I ever made. It was hosted on a weird free unix server I found online.</p>
+
+        <h3><a href="web/second/index.html">Second Website</a></h3>
+        <p>Used from March to October 2014. My first foray into using CSS to make things look not-totally-pants.</p>
+
+        <h3><a href="web/third/index.html">Third version of my website</a></h3>
+        <p>Used from October 2014 to December 2015. Last version of my website written in <a href="https://github.com/Foggalong/Wren">Wren</a> before I switched to <a href=https://ghost.org">Ghost</a>. CSS is still a little bit clunky and basic but improved.</p>
+	</div>
+</div>
 </body>
+
+</html>
