@@ -51,9 +51,9 @@
         /* Visited */
         ['null'],
         /* Stayed */
-        ['france', 'greece', 'portugal', 'scotland', 'spain', 'wales'],
+        ['france', 'greece', 'portugal', 'spain', 'wales'],
         /* Lived */
-        ['england']
+        ['england', 'scotland']
     ];
 
     function init(evt) {
