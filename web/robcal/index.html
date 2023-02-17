@@ -34,11 +34,20 @@
             margin: 50px auto 0 auto;
         }
 
-        div.page-canvas {
+        .page-canvas {
             background-color: #f9f9f9;
             padding: 20px 60px 20px 40px;
             border-radius: 15px;
             box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            background-color: #D9D9D9;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            padding: 1px 8px 1px 8px;
+            box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.05);
         }
 
         footer {
@@ -50,14 +59,6 @@
 
         /* Value Sliders */
         /* ============= */
-
-        .slidecontainer {
-            background-color: #D9D9D9;
-            width: 100%;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            padding: 1px 8px 1px 8px;
-        }
 
         .slider {
             -webkit-appearance: none;
@@ -80,11 +81,13 @@
 
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
+            background-color: #5d5d5d;
             appearance: none;
             width: 23px;
             height: 24px;
             border: 0;
             cursor: pointer;
+            box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.05);
         }
         
         .slider::-moz-range-thumb {
@@ -93,6 +96,7 @@
             height: 24px;
             border: 0;
             cursor: pointer;
+            box-shadow: 0 .2em .2em rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -101,44 +105,60 @@
   <div class="page-canvas">
     <h1>Recruitment Calculator</h1>
 
-    <p>The number of new volunteers \( N \) that will come from a particular training intake is given by
+    <p>The expected number of new volunteers \( N \) for a particular training intake is given by
     \[
         N = \Big\lfloor \big\lfloor (((V-4)\times E) + A) \div G\big\rfloor \times T \times P \Big\rfloor
     \]
-    where the variables within that are defined below.</p>
+    where the variables within that are defined below. Note the square brackets denote rounding down to the nearest integer.</p>
 
-    <div class="slidecontainer">
-        <p>New Volunteers, \(N\) = <span id="N_output"></span></p>
-        <p>Trainers per Trainee \(R\) = <span id="R_output"></span></p>
+    <div class="container" style="background-color: #ffef95;">
+        <p title="The estimated number of new volunteers expected from a training intake.">
+            <b>New Volunteers</b>, \(N\) = <span id="N_output"></span>
+        </p>
+        <p title="On average how many trainers it takes to trainee one trainee.">
+            Trainers per Trainee \(R\) = <span id="R_output"></span>
+        </p>
     </div>
 
-    <div class="slidecontainer">
-        <p>Number of Volunteers, \(V\) = <span id="V_output">40</span></p>
+    <div class="container">
+        <p title="The total number of volunteers in the organization.">
+            Number of Volunteers, \(V\) = <span id="V_output">40</span>
+        </p>
         <input type="range" min="1" max="120" value="40" class="slider" id="V">
     </div>
 
-    <div class="slidecontainer">
-        <p>Number of Alumni, \(A\) = <span id="A_output"></span></p>
+    <div class="container">
+        <p title="The number of alumni (or other external volunteers) who have agreed to help with training.">
+            Number of Alumni, \(A\) = <span id="A_output"></span>
+        </p>
         <input type="range" min="0" max="20" value="10" class="slider" id="A">
     </div>
 
-    <div class="slidecontainer">
-        <p>Engagement with Training, \(E\) = <span id="E_output"></span>%</p>
+    <div class="container">
+        <p title="Percentage of volunteers (V) who actually help out with training.">
+            Engagement with Training, \(E\) = <span id="E_output"></span>%
+        </p>
         <input type="range" min="0" max="1000" value="667" class="slider" id="E">
     </div>
 
-    <div class="slidecontainer">
-        <p>Number of Trainers per Group, \(G\) = <span id="G_output"></span></p>
+    <div class="container">
+        <p title="How many volunteers are needed, on average, for each training group.">
+            Number of Trainers per Group, \(G\) = <span id="G_output"></span>
+        </p>
         <input type="range" min="1" max="100" value="50" class="slider" id="G">
     </div>
 
-    <div class="slidecontainer">
-        <p>Number of Trainees per Group, \(T\) = <span id="T_output"></span></p>
+    <div class="container">
+        <p title="The size of each training group.">
+            Number of Trainees per Group, \(T\) = <span id="T_output"></span>
+        </p>
         <input type="range" min="1" max="10" value="3" class="slider" id="T">
     </div>
 
-    <div class="slidecontainer">
-        <p>Completion Rate, \(P\) = <span id="P_output"></span>%</p>
+    <div class="container">
+        <p title="Percentage of trainees who typically complete training and become new volunteers.">
+            Completion Rate, \(P\) = <span id="P_output"></span>%
+        </p>
         <input type="range" min="0" max="1000" value="750" class="slider" id="P">
     </div>    
     </div>
