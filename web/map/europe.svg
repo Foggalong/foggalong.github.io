@@ -49,9 +49,9 @@
         /* Traversed */
         ['null'],
         /* Visited */
-        ['null'],
+        ['northern-ireland'],
         /* Stayed */
-        ['france', 'greece', 'portugal', 'spain', 'wales'],
+        ['france', 'greece', 'portugal', 'spain', 'wales', 'hungary', 'denmark', 'ireland'],
         /* Lived */
         ['england', 'scotland']
     ];
